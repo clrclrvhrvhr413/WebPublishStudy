@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>연습</title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			padding: 10px;
+			text-align: center;
+		}
+		li {
+			list-style: none;
+		}
+		a {
+			display: block;
+			padding: 5px;
+			text-decoration: none;
+			color: #000;
+		}
+		#wrap {
+			width: 80%;
+			margin: 0 auto;
+		}
+		#nav:after {
+			clear: both;
+			content: "";
+			display: block;
+		}
+		#nav {
+			text-align: center;
+			width: 600px;
+			margin: 0 auto;
+		}
+		#nav .m {
+			float: left;
+			width: 150px;
+		}
+		#nav .m ul {
+			background: #000;
+		}
+		#nav .m ul li {
+			border-bottom: 1px solid #777;
+		}
+		#nav .m ul li:last-child {
+			border: none;
+		}
+		#nav .m ul a {
+			color: #fff;
+		}
+		#nav .m ul a:hover,
+		#nav .m ul a:active {
+			color: #000;
+			background: pink;
+		}
+
+		#content {
+			width: 100%; height: 300px;
+			margin: 10px 0;
+			border: 2px solid #777;
+			overflow: hidden;
+			position: relative;
+			box-sizing: border-box;
+		}
+		#content .pic img {
+			width: 100%;
+			position: absolute;
+		}
+		#content .controls {
+			position: absolute;
+			width: 60px;
+			bottom: 10px;
+			left: 50%;
+			margin-left: -30px;
+		}
+		#content .controls button {
+			background: #999;
+			width: 15px; height: 15px;
+			border-radius: 50%;
+		}
+		#content .controls button:hover,
+		#content .controls button:active {
+			background: pink;
+		}
+
+		#box {
+			width: 200px;
+			height: 200px;
+			border-style: solid;
+			background: #999;
+			border-image: linear-gradient(to right, #01c9ca 0%, #3886FF 100%);
+			border-image-width: 20px 10px;
+			/*이거 하니까 갑자기 각 꼭지점에 있던 이미지가 이어져서 bordr가 됨 대신기이ㅣㅣ
+			https://zinee-world.tistory.com/453
+			https://developer.mozilla.org/ko/docs/Web/CSS/border-image-slice*/
+			border-image-slice: 1 1;
+		}
+	</style>
+</head>
+<body>
+	<!-- 기본효과 메서드 : slide fade show
+		버튼으로 이미지 슬라이드
+		메뉴바
+		animate()  -->
+	<div id="wrap">
+		<h1>연습을 해보자</h1>
+		<div id="nav">
+			<ul>
+				<li class="m">
+					<a href="#">메뉴1</a>
+					<ul>
+						<li><a href="#">메뉴1-1</a></li>
+						<li><a href="#">메뉴1-2</a></li>
+						<li><a href="#">메뉴1-3</a></li>
+					</ul>
+				</li>
+				<li class="m">
+					<a href="#">메뉴2</a>
+					<ul>
+						<li><a href="#">메뉴2-1</a></li>
+						<li><a href="#">메뉴2-2</a></li>
+						<li><a href="#">메뉴2-3</a></li>
+					</ul>
+				</li>
+				<li class="m">
+					<a href="#">메뉴3</a>
+					<ul>
+						<li><a href="#">메뉴3-1</a></li>
+						<li><a href="#">메뉴3-2</a></li>
+						<li><a href="#">메뉴3-3</a></li>
+					</ul>
+				</li>
+				<li class="m">
+					<a href="#">메뉴4</a>
+					<ul>
+						<li><a href="#">메뉴4-1</a></li>
+						<li><a href="#">메뉴4-2</a></li>
+						<li><a href="#">메뉴4-3</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="content">
+			<div class="pic">
+				<img src="../img/bg1.jpg" alt="1">
+				<img src="../img/bg2.jpg" alt="2">
+				<img src="../img/bg3.jpg" alt="3">
+			</div>
+			<div class="controls">
+				<button></button>
+				<button></button>
+				<button></button>
+			</div>
+		</div>
+		<div id="box"></div>
+	</div>
+
+
+	<script type="text/javascript">
+		$(function(){
+			
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>key 이벤트</title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		textarea {
+			width: 300px;
+			height: 200px;
+		}
+		#display {
+			width: 300px;
+			height: 100px;
+			border: 1px solid #333;
+			overflow: auto;
+			word-wrap: break-word;
+		}
+		.bg {
+			background: seagreen;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<textarea></textarea>
+	<div id="display"></div>
+
+
+	<script>
+		$(document).ready(function(){
+			$('textarea').keydown(function(){
+				$(this).addClass('bg');
+			}).keyup(function(){
+				$('#display').text($(this).val());
+			})
+		});
+	</script>
+</body>
+</html>

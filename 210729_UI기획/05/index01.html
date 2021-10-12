@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style type="text/css">
+		*{
+			margin: 5px;
+			padding: 0;
+		}
+		div {
+			width: 100px;
+			height: 100px;
+			background: orange;
+			position: relative;
+
+			overflow: hidden;
+		}
+		button {
+			padding: 3px;
+		}
+	</style>
+</head>
+<body>
+	<button>play</button>
+	<button>stop()</button>
+	<div class="m1"></div>
+
+	<button>play</button>
+	<button>stop(true)</button>
+	<div class="m2"></div>
+
+	<button>play</button>
+	<button>stop(false,true)</button>
+	<div class="m3"></div>
+	
+	<button>play</button>
+	<button>stop(true,true)</button>
+	<div class="m4"></div>
+
+	<script type="text/javascript">
+		$(function(){
+			function move(target){
+				target = $(target);
+				target.animate({left:200},2000)
+						.animate({width:200},2000)
+						.animate({height:200},2000);
+			}
+
+			$('button:eq(0)').click(function(){
+				move('.m1');
+			});
+			$('button:eq(1)').click(function(){
+				$('.m1').stop();
+				//한 단계만 stop 후 다음 animate 실행
+			});
+
+			$('button:eq(2)').click(function(){
+				move('.m2');
+			});
+			$('button:eq(3)').click(function(){
+				$('.m2').stop(true);
+				//연결되어 있는 모든 animate 중단
+			});
+
+			$('button:eq(4)').click(function(){
+				move('.m3');
+			});
+			$('button:eq(5)').click(function(){
+				$('.m3').stop(false,true);
+				//현재 animate를 바로 끝낸(중단 x) 후 다음 animate 실행
+			});
+
+			$('button:eq(6)').click(function(){
+				move('.m4');
+			});
+			$('button:eq(7)').click(function(){
+				$('.m4').stop(true,true);
+				//현재 animate를 바로 끝내고 다음 animate를 진행하지않고 멈춤
+				/*다시 시작할때 stop(true) 는 끝난 시점부터 다시 시작하고,
+				 *stop(true,true)는 처음부터 다시 시작하여 delay?가 발생
+				*/
+			});
+		});
+	</script>
+</body>
+</html>

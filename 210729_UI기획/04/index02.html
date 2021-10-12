@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>page 525</title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style>
+		div {
+			width: 1920px;
+			height: 1206px;
+			/*border: 1px solid #333;*/
+			box-shadow: 1px 1px 30px #aaa, -1px -1px 30px #aaa;
+			margin: auto;
+			position: relative;
+			border-radius: 5px;
+		}
+		div p {
+			position: absolute;
+			width: 400px;
+			bottom: 30px;
+			left: 50%;
+			margin-left: -200px;
+			text-align: center;
+		}
+		div img {
+			position: absolute;
+			display: none;
+			opacity: 0.8;
+		}
+		div img.on{
+			display: block;
+		}
+		div p button {
+			font-size: 40px;
+			border-radius: 50%;
+			width: 60px; height: 60px;
+			background: #333;
+			color: #eee;
+			text-align: center;
+			cursor: pointer;
+		}
+		div p button:hover {
+			transform: scale(0.9);
+		}
+		div p button.on{
+			background: yellow;
+			color: #333;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="../img/bg1.jpg">
+		<img src="../img/bg2.jpg">
+		<img src="../img/bg3.jpg">
+		<img src="../img/bg4.jpg">
+		<img src="../img/bg5.jpg">
+		<p>
+			<button>1</button>
+			<button>2</button>
+			<button>3</button>
+			<button>4</button>
+			<button>5</button>
+		</p>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('p>button').click(function(){
+				var i = $('p>button').index(this);
+				$(this).addClass('on').siblings().removeClass('on');
+				$('div img').eq(i).addClass('on').
+			})
+		});
+	</script>
+</body>
+</html>

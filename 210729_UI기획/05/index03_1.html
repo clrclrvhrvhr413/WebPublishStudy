@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0;
+		}
+		body {
+			text-align: center;
+		}
+		nav#gnb {
+			/*inline으로 해야 text-center가 먹혀*/
+			display: inline-block;
+			position: relative;
+			/*width: 600px;*/
+			/*margin: auto;*/
+		}
+		li {
+			list-style: none;
+			/*float: left; 더 구체화 한 곳에 지정하기*/
+		}
+		a {
+			display: block;
+			text-align: center;
+			text-decoration: none;
+			color: #777;
+			/*width: 150px; li에 해도 클릭 가능하네*/
+			/*padding: 10px;*/
+			/*box-sizing: border-box;*/
+			transition: all .5s ease;
+		}
+		#gnb ul li {
+			width: 150px;
+			height: 40px;
+			line-height: 40px;
+			float: left;
+		}
+		#gnb span {
+			display: inline-block;/*span은 inline이니까 내용이 없으면 크기가 없으니 inlineblock으로 바꿔*/
+			position: absolute;
+			width: 150px; height: 40px;
+			border-bottom: 2px solid darkorange;
+			left: 0;
+			top: 0;
+		}
+		a.on{
+			color: #000;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<nav id="gnb">
+		<ul>
+			<li><a href="#">HTML</a></li>
+			<li><a href="#">CSS</a></li>
+			<li><a href="#">Javascript</a></li>
+			<li><a href="#">jQuery</a></li>
+		</ul>
+		
+	</nav>
+
+	<script type="text/javascript">
+		$(function(){
+			var w = $('#gnb ul li').width();
+			$('#gnb').append('<span></span>');
+
+			$('#gnb ul li').on('mouseenter',function(){
+				var index = $(this).index();
+
+				//막대 애니메이션
+				$('#gnb span').stop().animate({left:index*w},'fast');
+				//마우스 들어가는 곳 스타일 변경
+				$(this).find('a').addClass('on')
+					.parent().siblings().find('a').removeClass('on');
+			});
+
+			//페이지 로드되면 첫번째 메뉴에 마우스 엔터처럼 스타일 넣어주기
+			$('#gnb ul li:eq(0)').trigger('mouseenter');
+		});
+	</script>
+</body>
+</html>

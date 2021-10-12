@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>이벤트 확산방지 - 버블링</title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #eee;
+		}
+		#select {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			/*border: 1px solid red;*/
+		}
+		li {
+			list-style: none;
+			border-bottom: 1px solid #ccc;
+		}
+		a {
+			text-decoration: none;
+			color: #333;
+			display: block;
+			height: 20px;
+			font-size: 12px;
+		}
+		#list a {
+			padding: 5px 5px;
+			line-height: 20px;
+		}
+		#list a:hover {
+			background: orange;
+			color: #fff;
+		}
+		#title a {
+			background: url("../img/icon02.jpg") no-repeat 100% 2px;
+			line-height: 20px;
+		}
+		#title a.on{
+			background-position: 100% -13px;
+			/*transform: rotate(180deg);
+				글까지 회전됨*/
+		}
+		#title {
+			border: 1px solid #ccc;
+			background: #fff;
+			width: 200px;
+		}
+		#select #list {
+			position: absolute;
+			bottom: 20px;
+			width: 200px;
+			border: 1px solid #ccc;
+			border-bottom: 0;
+			background: #fff;
+			display: none;
+		}
+		#select #list.on {
+			display: block;
+		}
+		p {
+			position: absolute;
+			width: 25px;
+			border: 1px solid #333;
+			background: #fff;
+			box-shadow: 2px 2px 2px;
+			text-align: center;
+			font-size: 10px;
+			display: none;
+		}
+		.view {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div id="select">
+		<div id="title">
+			<a href="#">사이트 이동</a>
+		</div>
+		<ul id="list">
+			<li><a href="https://www.naver.com" target="_blank">네이버</a></li>
+			<li><a href="https://www.daum.net" target="_blank">다음</a></li>
+			<li><a href="https://www.google.co.kr" target="_blank">구글</a></li>
+		</ul>
+	</div>
+	<p>새창</p>
+
+
+
+	<script>
+		$(document).ready(function(){
+			/*click 이벤트를 상위요소까지 훑으면서 전파하기 때문에 모든 click이벤트가 발생된다.
+				그러면 아래 html과 select의 click이벤트 또한 실행되기 때문에 서로 출동이 일어난다.
+				이를 e.stopPropagation()가 막는다.*/
+			// $('#select').click(function(e){
+			// 	console.log('select 버블링 click');
+			// 	// console.log(e.target);
+			// })
+			// $('html').click(function(e){
+			// 	console.log('html 버블링 click');
+			// 	// console.log(e.target);
+			// })
+			$('#title a').click(function(e){
+				$('#list').toggleClass('on');
+				/*아래와 toggleClass는 같은 실행을 한다.*/
+				// if($('#list').hasClass('on')){
+				// 	$(this).add('#list').removeClass('on');
+				// }else{
+				// 	$(this).add('#list').addClass('on');
+				// }
+				e.preventDefault();
+				e.stopPropagation();
+				
+				// return false;
+			});
+			$('#list a').mousemove(function(event){
+				var x = event.pageX;
+				var y = event.pageY-20;
+				$('p').addClass('view').css({
+					left:x,
+					top:y
+				});
+			}).mouseleave(function(){
+				$('p').removeClass('view');
+			});
+			
+			$('html').click(function(){
+				$('#title a').add('#list').removeClass('on');
+			});
+		});
+	</script>
+</body>
+</html>

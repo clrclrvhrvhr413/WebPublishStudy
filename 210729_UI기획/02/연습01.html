@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>scroll option</title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap {
+			background: #eee;
+			height: 1000px;
+		}
+		#up a {
+			background: #333;
+			color: #fff;
+			text-align: center;
+			text-decoration: none;
+			display: block;
+			padding: 20px;
+		}
+		#up {
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			opacity: 0;
+			transition: .5s;
+		}
+		#up.on {
+			opacity: 1;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="wrap"></div>
+	<div id="up"><a href="#">TOP</a></div>
+
+
+
+
+	<script>
+		$(document).ready(function(){
+			$(window).scroll(function(){
+				var h = $(this).scrollTop();
+				if(h>200) {$('#up').addClass('on');}
+				else {$('#up').removeClass('on');}
+			});
+
+			$('#up').click(function(){
+				$(window).scrollTop(0);
+				event.preventDefault();
+			})
+		})
+	</script>
+</body>
+</html>

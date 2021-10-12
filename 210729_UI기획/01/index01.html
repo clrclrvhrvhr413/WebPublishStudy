@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>position으로 처리하기</title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style>
+		#wrap {
+			width: 300px;
+			margin: 30px auto;
+		}
+		.nav {
+			text-align: right;
+			margin: 5px;
+		}
+		#wrap .nav button{
+			background: #555;
+			color: #fff;
+		}
+		.img {
+			position: relative;
+			width: 300px;
+			height: 300px;
+			border: 1px solid #333;
+			box-sizing: border-box;
+		}
+		img {
+			position: absolute;
+			display: none;
+		}
+		img.on {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="nav">
+			<span class="cnt">1</span>
+			<span>/</span>
+			<button class="prev">&lt;</button>
+			<button class="next">&gt;</button>
+		</div>
+		<div class="img">
+			<img src="../img/1.jpg" class="on">
+			<img src="../img/2.jpg">
+			<img src="../img/3.jpg">
+			<img src="../img/4.jpg">
+			<img src="../img/5.jpg">
+			<img src="../img/6.jpg">
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+			var total = $('.img>img').length;
+			var cnt = 1;
+			
+			$('.nav span:last').after(total);
+
+			$('.next').click(function(){
+				cnt++;
+				if (cnt>total) {cnt=1;}
+				$('.cnt').text(cnt);
+				$('.img img').siblings().removeClass('on')
+					.end().eq(cnt-1).addClass('on');
+			});
+
+			$('.prev').click(function(){
+				cnt--;
+				if (cnt<1) {cnt=total;}
+				$('.cnt').text(cnt);
+				$('.img img').siblings().removeClass('on')
+					.end().eq(cnt-1).addClass('on');
+					
+			});
+		})
+	</script>
+</body>
+</html>

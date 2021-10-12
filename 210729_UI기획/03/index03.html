@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>트리거</title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.m1 {
+			background: green;
+			height: 100px;
+			width: 2%;
+			transition: all linear 1s;
+		}
+		.m2 {
+			background: darkred;
+			height: 100px;
+			width: 2%;
+			margin-left: 98%;
+			transition: all linear 1s;
+		}
+		button {
+			width: 50px;
+			height: 30px;
+		}
+		.on {
+			width: 100%;
+			margin-left: 0;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="m1"></div>
+	<div class="m2"></div>
+	<div>
+		<button>클릭1</button>
+		<button>클릭2</button>
+		<button>ALL</button>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+			$('button:eq(0)').on('click',function(){
+				$('.m1').toggleClass('on');
+			}).trigger('click');
+			$('button:eq(1)').on('click',function(){
+				$('.m2').toggleClass('on');
+			}).trigger('click');
+			$('button:eq(2)').on('click',function(){
+				$('.m1').toggleClass('on');
+				$('.m2').toggleClass('on');
+			});
+		})
+	</script>
+</body>
+</html>

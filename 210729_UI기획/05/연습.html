@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>연습</title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0;
+		}
+		li {
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+		#gnb:after {
+			clear: both;
+			content: "";
+			display: block;
+		}
+		#gnb {
+			text-align: center;
+		}
+		#gnb ul {
+			display: inline-block;
+
+		}
+		#gnb li {
+			float: left;
+			width: 200px;
+			height: 40px;
+			line-height: 40px;
+			border: 1px solid #333;
+		}
+		#gnb li a {
+			display: block;
+		}
+		#pic {
+			color: #fff;
+		}
+		#pic {
+			width: 900px;
+			height: 200px;
+			background: url('../img/bg5.jpg') no-repeat right 0;
+			background-size: 100%;
+			margin: 5px auto;
+			position: relative;
+		}
+		.title {
+			font-size: 60px;
+			font-weight: 700;
+			font-style: italic;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+			opacity: 0;
+			top: 80px;
+		}
+		.subtitle {
+			position: absolute;
+			text-align: center;
+			width: 100%;
+			opacity: 0;
+			top: 100px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 메뉴바 애니메이션
+		 text delay 애니메이션 -->
+	<nav id="gnb">
+		<ul>
+			<li><a href="#">HTML</a></li>
+			<li><a href="#">CSS</a></li>
+			<li><a href="#">Javascript</a></li>
+			<li><a href="#">jQuery</a></li>
+		</ul>
+	</nav>
+
+	<div id="pic">
+		<span class="title">Responsice Web</span>
+		<span class="subtitle">[HTML CSS Javascript jQuery]</span>
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			$('.title').delay(500).animate({
+				opacity:0.8,
+				top:50
+			},1000);
+			$('.subtitle').delay(1000).animate({
+				opacity:0.8,
+				top:120
+			},1000);
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style>
+		#slide1, #slide2 {
+			display: inline-block;
+		}
+		#slide1 div {
+			float: right;
+		}
+		#slide1 div button {
+			display: block;
+			margin-left: 5px;
+		}
+		#wrap1 {
+			border: 4px solid red;
+			width: 300px;
+			height: 300px;
+			overflow: hidden;
+			transition: 2s;
+		}
+		#wrap2 {
+			border: 4px solid green;
+			/*width: 300px;*/
+		}
+		
+
+	</style>
+</head>
+<body>
+	<div id="slide1">
+		<div>
+			<button class="up">∧</button>
+			<button class="dwn">∨</button>
+		</div>
+		<div id="wrap1">
+			<img src="../img/1.jpg">
+			<img src="../img/2.jpg">
+			<img src="../img/3.jpg">
+			<img src="../img/4.jpg">
+			<img src="../img/5.jpg">
+			<img src="../img/6.jpg">
+		</div>
+	</div>
+	<div id="slide2">
+		<div>
+			<button>&lt;</button>
+			<button>&gt;</button>
+		</div>
+		<div id="wrap2">
+			<img src="../img/1.jpg">
+			<img src="../img/2.jpg">
+			<img src="../img/3.jpg">
+			<img src="../img/4.jpg">
+			<img src="../img/5.jpg">
+			<img src="../img/6.jpg">
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+			$('.up').click(function(){
+				$('#wrap1 img:first').insertAfter('#wrap1 img:last');
+			})
+			$('.dwn').click(function(){
+				$('#wrap1 img:last').insertBefore('#wrap1 img:first');
+			})
+		})
+	</script>
+</body>
+</html>

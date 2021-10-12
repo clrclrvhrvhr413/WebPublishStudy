@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>기본효과 메서드</title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style>
+		div{
+			margin: 5px;
+		}
+		div[class^='box'] {
+			width: 200px;
+			height: 200px;
+			border: 2px solid #333;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="m1">
+		<button>show</button>
+		<button>hide</button>
+		<button>toggle</button>
+	</div>
+	<div class="box1">내용1</div>
+
+	<div id="m2">
+		<button>slideDown</button>
+		<button>slideUp</button>
+		<button>slideToggle</button>
+	</div>
+	<div class="box2">내용2</div>
+
+	<div id="m3">
+		<button>fadeIn</button>
+		<button>fadeOut</button>
+		<button>fadeToggle</button>
+	</div>
+	<div class="box3">내용3</div>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#m1 button:eq(0)').click(function(){
+				$('.box1').show('slow','linear');
+			});
+			$('#m1 button:eq(1)').click(function(){
+				$('.box1').hide('slow','swing');
+			});
+			$('#m1 button:eq(2)').click(function(){
+				$('.box1').toggle();
+			});
+
+			$('#m2 button:eq(0)').on('click',function(){
+				$('.box2').slideDown();
+			});
+			$('#m2 button:eq(1)').on('click',function(){
+				$('.box2').slideUp();
+			});
+			$('#m2 button:eq(2)').on('click',function(){
+				$('.box2').slideToggle();
+			});
+
+			$('#m3 button:eq(0)').click(function(){
+				$('.box3').fadeIn(500,'linear',function(){
+					$(this).text('jQuery')
+				});
+			});
+			$('#m3 button:eq(1)').click(function(){
+				$('.box3').fadeOut(1000,'swing',function(){
+					$(this).text('내용3')
+				});
+			});
+			$('#m3 button:eq(2)').click(function(){
+				$('.box3').fadeToggle(function(){
+					if ($(this).css('display')==='block') {
+						$(this).text('jQuery');
+					}else {
+						$(this).text('내용3');
+					}
+				});
+			})
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>마우스 이벤트</title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style>
+		.bg div{
+			margin: 0 auto;
+			background: #aaa;
+			width: 90%;
+			padding: 20px;
+		}
+		.bg {
+			padding: 30px;
+			background: #ccc;
+			margin-bottom: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="bg wrap1">
+		<div>마우스 오버</div>
+	</div>
+	<div class="bg wrap2">
+		<div>마우스 엔터</div>
+	</div>
+	<div class="display"></div>
+
+	<script>
+		$(document).ready(function(){
+			$('.wrap1').mouseover(function(){
+				$('.display').append(' OVER ').css('color','red');
+			})
+			$('.wrap2').mouseenter(function() {
+				$('.display').append(' ENTER ').css('color','blue');
+			})
+		})
+	</script>
+</body>
+</html>

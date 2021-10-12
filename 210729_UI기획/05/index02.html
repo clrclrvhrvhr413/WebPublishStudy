@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style type="text/css">
+		*{
+			margin: 5px;
+			padding: 0;
+		}
+		div[class^='m'] {
+			width: 100px;
+			height: 100px;
+			background: orange;
+			position: relative;
+
+			overflow: hidden;
+		}
+		button {
+			padding: 3px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<button>slideToggle()</button>
+		<div class="m1"></div>
+	</div>
+
+	<div>
+		<button>slideToggle()_stop()</button>
+		<div class="m2"></div>
+	</div>
+
+	<div>
+		<button>animate</button>
+		<div class="m3"></div>
+	</div>
+	
+	<div>
+		<button>animate_stop()</button>
+		<div class="m4"></div>
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			$('button:eq(0)').click(function(){
+				$('.m1').slideToggle();
+			});
+			$('button:eq(1)').click(function(){
+				$('.m2').stop().slideToggle();
+			});
+			$('button:eq(2)').click(function(){
+				$('.m3').animate({height:"toggle"},1000);
+			});
+			$('button:eq(3)').click(function(){
+				$('.m4').stop().animate({width:"toggle"},1000);
+			});
+
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>scroll</title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style>
+		#wrap {
+			margin: 0 auto;
+			border: 1px solid lightblue;
+			width: 800px;
+			height: 500px;
+		}
+		#info {
+			float: left;
+			width: 300px;
+			text-align: right;
+		}
+		#info span {
+			display: block;
+		}
+		#outer {
+			border: 1px solid green;
+			width: 500px;
+			height: 500px;
+			overflow: scroll;
+			float: right;
+			box-sizing: border-box;
+		}
+		.inner {
+			width: 1000px;
+			height: 1000px;
+			background: radial-gradient(red,yellow,green);
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="info">
+			<span></span>
+			<span></span>
+			<button>클릭</button>
+		</div>
+
+		<div id="outer">
+			<div class="inner">top</div>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+			var top =0;
+			var left =0;
+			$('#info span:first').text('scrollTop : '+top);
+			$('#info span:last').text('scrollLeft : '+left);
+			$('#outer').scroll(function(){
+				top = $('#outer').scrollTop();
+				left = $('#outer').scrollLeft();
+				$('#info span:first').text('scrollTop : '+top);
+				$('#info span:last').text('scrollLeft : '+left);
+
+			})
+			// $('#info span:first').text('scrollTop : 0');
+			// $('#info span:last').text('scrollLeft : 0');
+
+			$('button').click(function(){
+				$('#outer').scrollTop(top+50).scrollLeft(left+50);
+			})
+
+		})
+	</script>
+</body>
+</html>

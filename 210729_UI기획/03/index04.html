@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>이벤트 객체</title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div {
+			/*margin: auto;*/
+			width: 300px;
+			height: 300px;
+			border:5px solid darkgreen;
+			border-radius: 50%;
+			background: olive ;
+			text-align: center;
+			line-height: 300px;
+			color: #fff;
+
+			position: absolute;
+			top: 50%; left: 50%;
+			margin-top: -150px;
+			margin-left: -150px;
+		}
+		p {
+			width: 250px;
+			height: 30px;
+			border-radius: 15px;
+			background: #333;
+			opacity: 0;
+			color: #fff;
+			text-align: center;
+			line-height: 30px;
+
+			position: absolute;
+		}
+		.on {
+			opacity: 0.6;
+		}
+	</style>
+</head>
+<body>
+	<div>학습할 과목</div>
+	<p>html, css, javascript, jQuery</p>
+
+	<script>
+		$(document).ready(function(){
+			$('div').mousemove(function(event){
+				var x = event.pageX;
+				var y = event.pageY-30;
+				$('p').css({
+					'left':x,
+					'top':y
+				})
+				$('p').addClass('on');
+			}).mouseleave(function(){
+				$('p').removeClass('on');
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>이벤트 연결 메서드</title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style>
+		*{
+			margin: 5px;
+		}
+		.on {
+			background: seagreen;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<p id="btn1"><button>클릭1</button></p>
+	<p id="btn2">
+		<button>클릭2-1</button>
+		<button>클릭2-2</button>
+	</p>
+	<p id="btn3"><button>클릭3</button></p>
+	<p id="btn4"><button>클릭4</button></p>
+	<p id="btn5"><button>클릭5</button></p>
+	<p id="btn6"><button>클릭6</button></p>
+	<div id="btn7"><p>클릭7</p></div>
+
+	<script>
+		$(document).ready(function(){
+			$('#btn1 button').on('click',function(){
+				alert('#btn1 이벤트');
+			});
+			$('#btn2').on('click','button',function(){
+				alert('#btn2 이벤트');
+			});
+			$('#btn3 button').on({
+				'mouseenter':function(){
+					$(this).addClass('on');
+				},'mouseleave':function(){
+					$(this).removeClass('on');
+				}
+			});
+			function showEvent(){
+				alert('btn4 함수 호출 이벤트');
+			}
+			$('#btn4 button').on('click',showEvent);
+
+			$('#btn5 button').on('click',function(){
+				alert('#btn5 이벤트 제거');
+			}).off();
+			$('#btn6 button').one('click', function(){
+				alert('btn6 one 이벤트')
+			});
+			$('#btn7').on('click',function(){
+				$('p',this).css('background','#ff0000');
+				$(this,'p').css('background','#00ff00');//얘가 더 크네
+			});
+		})
+	</script>
+</body>
+</html>

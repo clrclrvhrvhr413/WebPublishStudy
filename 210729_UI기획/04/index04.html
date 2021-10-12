@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<style type="text/css">
+		*{
+			margin: 5px;
+			padding: 0;
+		}
+		div {
+			width: 100px;
+			height: 100px;
+			background: orange;
+			position: relative;
+
+			overflow: hidden;
+		}
+		.m1 {
+			overflow: hidden;
+		}
+		.m1 span {
+			position: relative;
+			top: -100px;
+		}
+
+		.practice {
+			margin: 0;
+			width: 100%;
+			border-top: 3px solid orangered;
+			position: absolute;
+			left: -100px;
+		}
+	</style>
+</head>
+<body>
+	<button>animate1</button>
+	<div class="m0"></div>
+
+	<button>animate2</button>
+	<div class="m1">
+		<span>애니메이션</span>
+	</div>
+
+	<button>animate3</button>
+	<div class="m2"></div>
+
+	<button>animate4</button>
+	<div class="m3"></div>
+
+	<button>border</button>
+	<div>
+		<p class="practice"></p>
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			$('button:eq(0)').click(function(){
+				$('.m0').stop(true).animate({left:500},1000)
+						.animate({left:0},1000,'linear');
+			});
+			$('button:eq(1)').click(function(){
+				$('.m1 span').css('top','-50px');//글씨 효과 초기화
+				$('.m1').stop(true).animate({left:500})
+						.animate({left:0},function(){
+							$(this).find('span').animate({top:40});
+
+						});
+			})
+			$('button:eq(2)').click(function(){
+				$('.m2').animate({left:'+=200'});
+			})
+			$('button:eq(3)').click(function(){
+				$('.m3').animate({width:'toggle'});
+			})
+
+			$('button:eq(4)').click(function(){
+				$('.practice').animate({left:100},3000,'linear',function(){
+					$('.practice').css('left','-100px');
+				});
+			})
+		})
+	</script>
+</body>
+</html>
