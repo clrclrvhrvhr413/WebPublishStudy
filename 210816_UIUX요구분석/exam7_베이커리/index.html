@@ -1,0 +1,184 @@
+<!-- size info
+-헤더 ? 130
+로고 250 125
+nav 600 ? - ul 600 20 - li 200 ? -a inline
+
+
+-슬라이드 960 400 img*5 - innertext 300 100 
+-콘텐츠 960 500
+notice 480 ?
+partner 480 ? (img*2: 230*76, 375*139) - modal (img*2: 300*100, 492*182)
+icon 960 ? (btn 160 ? = img 160*160 button 160 ?)*3
+
+-footer 100% 
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>베이커리</title>
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<header class="all">
+		<div id="header_logo" class="wrap">
+			<h1 class="logo">
+				<!-- <a href="#"><img src="https://via.placeholder.com/250x125" alt="상단로고"></a> -->
+				<a href="#"><img src="images/logo/logo.png" alt="상단로고"></a>
+			</h1>
+
+			<nav>
+				<ul class="nav">
+					<li><a href="#">DD 소개</a></li>
+					<li><a href="#">빵 만들기</a>
+						<ul class="submenu">
+							<li><a href="#">제빵 재료</a></li>
+							<li><a href="#">제빵 도구</a></li>
+							<li><a href="#">제빵 포장 도구</a></li>
+						</ul>
+					</li>
+					<li><a href="#">커뮤니티</a>
+						<ul class="submenu">
+							<li><a href="#">나만의 레시피</a></li>
+							<li><a href="#">내가 만든 빵</a></li>
+							<li><a href="#">제빵 노하우</a></li>
+						</ul>
+					</li>
+					<li class="clear"></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="clear"></div>
+
+	<!-- w960 -->
+	<div id="imageslide" class="wrap">
+		<div class="imgs">
+			<img src="images/slide/img1.jpg" alt="이미지1">		
+			<img src="images/slide/img2.jpg" alt="이미지2">
+			<img src="images/slide/img3.jpg" alt="이미지3">		
+			<img src="images/slide/img4.jpg" alt="이미지4">
+			<img src="images/slide/img5.jpg" alt="이미지5">		
+		</div>
+
+		<div class="welcome">
+			<h2>
+				<span>베이커리 카페</span>
+			</h2>
+			<h3>
+				<span>세상에 하나뿐인 베이커리</span>
+			</h3>
+		</div>
+	</div>
+	<!-- <div class="clear"></div> -->
+
+	<!-- w960 -->
+	<div id="contents" class="wrap">
+		<!-- 공지사항 -->
+		<div class="notice">
+			<h2>공지사항</h2>
+			<table class="table">
+				<tr>
+					<th>내용</th>
+					<th>날짜</th>
+				</tr>
+				<tr>
+					<td><a href="#">제 1회 DD 베이커리 워크숍(서울권)에 초대합니다.</a></td>
+					<td>2021-08-20</td>
+				</tr>
+				<tr>
+					<td><a href="#">올림픽공원 카페 초보 여성창업을 추천받습니다.</a></td>
+					<td>2021-08-20</td>
+				</tr>
+				<tr>
+					<td><a href="#">맛과 영양, 환경문제까지 생각하는 베이커리!</a></td>
+					<td>2021-08-20</td>
+				</tr>
+				<tr>
+					<td><a href="#">고품질 크림으로 만든 디저트로 달콤하게 겨울나기</a></td>
+					<td>2021-08-20</td>
+				</tr>
+				<tr>
+					<td><a href="#">온가족이 함께 즐기는 베이킹 체험 교실</a></td>
+					<td>2021-08-20</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- 정보나눔 -->
+		<div class="partner">
+			<h2>Partner</h2>
+			<div class="partner_info">
+				<!-- <img src="images/partner/info.png" alt="파트너 그림" width="400" height="150"> -->
+				<img src="https://via.placeholder.com/230x76" alt="파트너 그림">
+				<img src="https://via.placeholder.com/375x139" alt="파트너 그림">
+			</div>
+		</div>
+		<div class="clear"></div>
+
+		<!-- 모달창 -->
+		<div id="partner_up">
+			<div class="body">
+				<div class="partner_img">
+					<img src="https://via.placeholder.com/300x100" alt="파트너 그림"><br>
+					<img src="https://via.placeholder.com/492x182" alt="파트너 그림">
+				</div>
+				<div class="button">
+					<button id="btn-close">닫기</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- 아이콘 -->
+		<div class="icon">
+			<div class="icons">
+				<div class="btn">
+					<!-- <img src="images/icons/icon1.png" alt="아이콘1"> -->
+					<img src="https://via.placeholder.com/160x160" alt="아이콘1">
+					<br>
+					<button>고수의 레시피</button>
+				</div>
+				<div class="btn">
+					<img src="https://via.placeholder.com/160x160" alt="아이콘2">
+					<br>
+					<button>모임 일정</button>
+				</div>
+				<div class="btn">
+					<img src="https://via.placeholder.com/160x160" alt="아이콘3">
+					<br>
+					<button>식품안전관리</button>
+				</div>
+			</div><!-- icons -->
+		</div>
+	</div>
+	<div class="clear"></div>
+	
+
+	<footer>
+		<div class="wrap">
+			<ul>
+				<li><a href="#">법적고지</a></li>
+				<li><a href="#">개인정보취급방침</a></li>
+				<li><a href="#">개인정보처리방침</a></li>
+			</ul>
+			<p>
+				사업자번호 : <br>
+				상호명 : <br>
+				대표자 : <br>
+				개인정보관리책임자 : <br>
+				상담전화 : <br>
+				사업장주소 : <br>
+				e-mail :
+			</p>
+		</div>
+		<div class="clear"></div>
+	</footer>
+
+
+</body>
+</html>

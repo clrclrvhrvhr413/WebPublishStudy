@@ -1,0 +1,31 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+table {
+	margin: 10px;
+}
+table td {
+	padding-right: 5px;
+}
+table input[type=text] {
+	width: 200px;
+}
+table textarea {
+	width: 250px; height: 100px;
+	resize: vertical;
+}
+table input[type=submit] {
+	font-size: 10px;
+	padding: 0 5px;
+
+}
+::placeholder {
+	font-size: 12px;
+	padding: 5px;
+	color: #333;
+}
+table select {
+	width: 200px;
+}

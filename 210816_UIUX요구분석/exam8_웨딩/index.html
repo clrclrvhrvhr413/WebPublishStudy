@@ -1,0 +1,187 @@
+<!-- size info
+-헤더 ? 180 - minwidth 1000
+로고 300 100
+nav 620 ? - li 200 ?
+
+-슬라이드 100% ? img*3 1000 350 - innertext 300 40 
+-콘텐츠 1000 500
+notice 480 ?
+partner 480 ? (img*2: 250*83, 350*130) - modal (img*2: 동일)
+icon 960 ? (btn 160 ? = img 160*160 button 160 ?)*3
+
+-footer 100% 
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>웨딩플래너</title>
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<header class="all">
+		<div id="header_logo" class="wrap">
+			<h1 class="logo">
+				<a href="#"><img src="https://via.placeholder.com/300x100" alt="상단로고"></a>
+				<!-- <a href="#"><img src="images/logo/logo.png" alt="상단로고"></a> -->
+			</h1>
+		</div>
+
+		<nav>
+			<ul class="nav">
+				<li><a href="#">H&S 소개</a></li>
+				<li><a href="#">파트너</a>
+					<ul class="submenu">
+						<li><a href="#">예복</a></li>
+						<li><a href="#">사진영상</a></li>
+						<li><a href="#">플라워</a></li>
+						<li><a href="#">주얼리</a></li>
+					</ul>
+				</li>
+				<li><a href="#">커뮤니티</a>
+					<ul class="submenu">
+						<li><a href="#">예식준비</a></li>
+						<li><a href="#">예식비용</a></li>
+						<li><a href="#">신혼여행</a></li>
+					</ul>
+				</li>
+				<li class="clear"></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="clear"></div>
+
+	<!-- w1000 -->
+	<div id="imageslide" class="all">
+		<div class="imgs">
+			<ul id="slides">
+				<!-- <li><img src="https://via.placeholder.com/1000x350" alt="이미지1"></li> -->
+				<li><img src="images/slide/img1.jpg" alt="이미지1"></li>
+				<li><img src="images/slide/img2.jpg" alt="이미지2"></li>
+				<li><img src="images/slide/img3.jpg" alt="이미지3"></li>
+			</ul>
+
+			<div class="welcome">
+				<h2>
+					<span>Wedding Planner</span>
+				</h2>
+			</div>
+
+			<div id="btn_slides">
+				<a href="#" class="btn_slides_prev off">이전</a>
+				<a href="#" class="btn_slides_next">다음</a>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+
+	<!-- w1000 -->
+	<div id="contents" class="wrap">
+		<!-- 공지사항 -->
+		<div class="notice">
+			<h2>공지사항</h2>
+			<table class="table">
+				<tr>
+					<th>내용</th>
+					<th>날짜</th>
+				</tr>
+				<tr>
+					<td><a href="#">맞춤 플랜을 제안하는 웨딩 크리에이티브 그룹</a></td>
+					<td>2021-08-20</td>
+				</tr>
+				<tr>
+					<td><a href="#">H&S와 함께 하실 가슴 따뜻한 분들을 모십니다.</a></td>
+					<td>2021-08-20</td>
+				</tr>
+				<tr>
+					<td><a href="#">H$S와 예식을 준비하신 분들께 감사드립니다.</a></td>
+					<td>2021-08-20</td>
+				</tr>
+				<tr>
+					<td><a href="#">코리아웨딩페어 결혼박람회가 열립니다.</a></td>
+					<td>2021-08-20</td>
+				</tr>
+				<tr>
+					<td><a href="#">마진없이 아낌없이 드리는 마지막 찬스!</a></td>
+					<td>2021-08-20</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- 정보나눔 -->
+		<div class="partner">
+			<h2>Partner</h2>
+			<div class="partner_info">
+				<!-- <img src="images/partner/info.png" alt="파트너 그림" width="400" height="150"> -->
+				<img src="https://via.placeholder.com/250x83" alt="파트너 그림">
+				<img src="https://via.placeholder.com/350x130" alt="파트너 그림">
+			</div>
+		</div>
+		<div class="clear"></div>
+
+		<!-- 모달창 -->
+		<div id="modal">
+			<div class="body">
+				<div class="partner_img">
+					<img src="https://via.placeholder.com/250x83" alt="파트너 그림">
+					<img src="https://via.placeholder.com/350x130" alt="파트너 그림">
+				</div>
+				<div class="button">
+					<button id="btn-close">닫기</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- 아이콘 -->
+		<div class="icon">
+			<div class="icons">
+				<div class="btn">
+					<!-- <img src="images/icons/icon1.png" alt="아이콘1"> -->
+					<img src="https://via.placeholder.com/160x160" alt="아이콘1">
+					<br>
+					<button>컨설팅</button>
+				</div>
+				<div class="btn">
+					<img src="https://via.placeholder.com/160x160" alt="아이콘2">
+					<br>
+					<button>스케줄</button>
+				</div>
+				<div class="btn">
+					<img src="https://via.placeholder.com/160x160" alt="아이콘3">
+					<br>
+					<button>위치안내</button>
+				</div>
+			</div><!-- icons -->
+		</div>
+	</div>
+	<div class="clear"></div>
+	
+
+	<footer>
+		<div class="wrap">
+			<ul>
+				<li><a href="#">법적고지</a></li>
+				<li><a href="#">개인정보취급방침</a></li>
+				<li><a href="#">개인정보처리방침</a></li>
+			</ul>
+			<p>
+				사업자번호 : <br>
+				상호명 : <br>
+				대표자 : <br>
+				개인정보관리책임자 : <br>
+				상담전화 : <br>
+				사업장주소 : <br>
+				e-mail :
+			</p>
+		</div>
+		<div class="clear"></div>
+	</footer>
+
+
+</body>
+</html>

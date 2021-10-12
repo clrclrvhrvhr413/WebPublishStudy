@@ -1,0 +1,168 @@
+<!-- size info
+-헤더 ? 150 - minwidth 1000
+로고 300 110
+nav 650 ? - li 150 ?
+
+-슬라이드 100% ? img*5 1000 400 - innertext 300 100 -button 15*15
+-콘텐츠 1000 500
+notice 480 ?
+partner 480 ? (img: 375*139) - modal (img: 500*185)
+icon 1000 ? (btn 160 ? = img 180*180 button 160 ?)*3
+
+-footer 100% 
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>무빙사진동호회</title>
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style1.css">
+</head>
+<body>
+	<header>
+		<div class="wrap">
+			<!-- logo -->
+			<h1 class="logo"><img src="https://via.placeholder.com/300x110" alt="로고"></h1>
+
+			<!-- menu -->
+			<nav>
+				<ul class="menu">
+					<li><a href="#">동호회소개</a>
+						<ul class="submenu">
+							<li><a href="#">submenu1</a></li>
+							<li><a href="#">submenu2</a></li>
+							<li><a href="#">submenu3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">갤러리</a>
+						<ul class="submenu">
+							<li><a href="#">submenu1</a></li>
+							<li><a href="#">submenu2</a></li>
+							<li><a href="#">submenu3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">교육안내</a>
+						<ul class="submenu">
+							<li><a href="#">submenu1</a></li>
+							<li><a href="#">submenu2</a></li>
+							<li><a href="#">submenu3</a></li>
+						</ul>
+					</li>
+					<li><a href="#" onclick="winOpen();">CONTACT</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<!-- imgslide -->
+	<div class="imgslide">
+		<div class="imgs">
+			<img src="https://via.placeholder.com/1000x400" alt="슬라이드1">
+			<img src="https://via.placeholder.com/1000x400" alt="슬라이드1">
+			<img src="https://via.placeholder.com/1000x400" alt="슬라이드1">
+			<img src="https://via.placeholder.com/1000x400" alt="슬라이드1">
+			<img src="https://via.placeholder.com/1000x400" alt="슬라이드1">
+		</div>
+		<div class="welcome">
+			<h2>무빙사진갤러리</h2>
+		</div>
+		<ul id="imgsbar">
+			<!-- <li><img src="https://via.placeholder.com/15/000000" alt="슬라이드버튼1"></li> -->
+			<li><a href="#" img-left="0px" class="active">
+				<!-- <img src="https://via.placeholder.com/15/000000"> -->
+			</a></li>
+			<li><a href="#" img-left="-1000px">
+				<!-- <img src="https://via.placeholder.com/15/000000"> -->
+			</a></li>
+			<li><a href="#" img-left="-2000px">
+				<!-- <img src="https://via.placeholder.com/15/000000"> -->
+			</a></li>
+			<li><a href="#" img-left="-3000px">
+				<!-- <img src="https://via.placeholder.com/15/000000"> -->
+			</a></li>
+			<li><a href="#" img-left="-4000px">
+				<!-- <img src="https://via.placeholder.com/15/000000"> -->
+			</a></li>
+		</ul>
+	</div>
+
+	<!-- contents -->
+	<div class="contents">
+		<!-- notice -->
+		<div class="notice">
+			<p>공지사항</p>
+			<table>
+				<tr>
+					<td>공지사항 목록1</td>
+					<td>2021.08.26</td>
+				</tr>
+				<tr>
+					<td>공지사항 목록2</td>
+					<td>2021.08.26</td>
+				</tr>
+				<tr>
+					<td>공지사항 목록3</td>
+					<td>2021.08.26</td>
+				</tr>
+				<tr>
+					<td>공지사항 목록4</td>
+					<td>2021.08.26</td>
+				</tr>
+				<tr>
+					<td>공지사항 목록5</td>
+					<td>2021.08.26</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- partner -->
+		<div class="partner">
+			<p>Partner Site</p>
+			<img src="https://via.placeholder.com/375x139" alt="파트너사이트">
+		</div>
+
+		<!-- modal -->
+		<div id="modal">
+			<div class="mobody">
+				<img src="https://via.placeholder.com/500x185" alt="파트너상세">
+				<p class="mobtn">닫기</p>
+			</div>
+		</div>
+
+		<!-- icon -->
+		<div class="icons">
+			<div class="icon">
+				<img src="https://via.placeholder.com/180" alt="아이콘1">
+				<button>커뮤니티</button>
+			</div>
+			<div class="icon">
+				<img src="https://via.placeholder.com/180" alt="아이콘2">
+				<button>전시회</button>
+			</div>
+			<div class="icon">
+				<img src="https://via.placeholder.com/180" alt="아이콘3">
+				<button>정보마당</button>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="wrap">
+			<ul class="bottom">
+				<li><a href="#">법적고지</a></li>
+				<li><a href="#">개인정보취급방침</a></li>
+				<li><a href="#">개인정보처리방침</a></li>
+			</ul>
+			<p>
+				대표자 :<br>
+				개인정보취급책임자 :<br>
+				사업장주소 :
+			</p>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,317 @@
+@charset "utf-8";
+
+/*초기화*/
+	* {
+		margin: 0 auto;
+		padding: 0;
+		list-style: none;
+		font-family: '맑은 고딕';
+		color: #222328;
+	}
+	body {
+		width: 1000px; 
+		background: #fff;
+		font-size: 20px;
+	}
+	a {
+		text-decoration: none;
+		display: block;
+	}
+/*header*/
+	header {
+		float: left;
+	}
+	.top {
+		width: 200px;
+		height: 650px;
+	}
+	.logo {
+		float: left;
+		width: 200px;
+		height: 40px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	.menu {
+		width: 180px;
+		top: 100px;
+		text-align-last: center;
+	}
+	.navi>li{
+		width: 180px;
+		float: left;
+	}
+	.navi>li>a {
+		width: 180px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 16px;
+		font-weight: bold;
+		background-color: #222328;
+		color: #fff;
+	}
+	.navi>li>a:hover {
+		background-color: #930;
+		color: #ffff00;
+	}
+	.submenu{
+		display: none;
+		width: 100%;
+	}
+	.submenu>li>a {
+		width: 180px;
+		height: 40px;
+		line-height: 40px;
+		background-color: #ccc;
+		color: #fff;
+		font-size: 14px;
+	}
+	.submenu>li>a:hover{
+		background: #999;
+		color: #ffff00;
+	}
+
+
+/*imgslide*/
+	.imgslide{
+		float: right;
+		width: 800px;
+		height: 350px;
+		position: relative;
+	}
+	.imgslide>a {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	.imgtext {
+		/*display: none;*/
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin: -25px 0 0 -150px;
+		width: 300px;
+		height: 50px;
+		text-align-last: center;
+		color: #fff;
+		font-weight: bold;
+		line-height: 50px;
+		background-color: rgba(40, 40, 40, .3);
+	}
+
+
+
+
+
+/*contents*/
+	.contents {
+		float: right;
+		width: 800px;
+		height: 200px;
+	}
+	.tab {
+		width: 300px;
+		float: left;
+	}
+	.tab h4 {
+		width: 80px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		background-color: #000;
+		color: #fff;
+		font-size: 14px;
+		font-weight: bold;
+		float: left;
+	}
+	/*notice*/
+		.notice {
+			width: 280px;
+			height: 190px;
+			float: left;
+			margin-top: 10px;
+		}
+		.notice>div {
+			width: 280px;
+			border-bottom: 1px solid #ccc;
+		}
+		.notice ul {
+			width: 280px;
+			height: 30px;
+			line-height: 30px;
+			font-size: 14px;
+			float: left;
+		}
+		.notice li:nth-child(even){
+			background-color: #ccc;
+		}
+		.notice li:hover {
+			font-weight: bold;
+		}
+		.notice li span {
+			float: right;
+		}
+	/*gallery*/
+		.gallery {
+			width: 300px;
+			height: 190px;
+			float: left;
+			margin-top: 10px;
+			margin-left: 20px;
+		}
+		.gallery>div {
+			width: 280px;
+			border-bottom: 1px solid #ccc;
+		}
+		.gallery ul {
+			width: 100%;
+			white-space: nowrap;
+			overflow-x: auto;
+		}
+		.gallery li {
+			/*float: left;*/
+			padding: 10px 10px 10px 0;
+			margin-top: 10px;
+			display: inline-block;
+		}
+		.gallery li img {
+			width: 75px;
+			height: 90px;
+		}
+		.gallery li:hover {
+			opacity: 0.5;
+		}
+	/*shortcut*/
+		.shortcut {
+			width: 200px;
+			height: 200px;
+			float: right;
+		}
+		.shortcut img {
+			float: right;
+			margin-top: 10px;
+			width: 180px;
+			height: 180px;
+		}
+		.sctext {
+			/*display: none;*/
+			float: right;
+			position: absolute;
+			margin-top: 80px;
+			margin-left: 60px;
+			width: 100px;
+			height: 30px;
+			line-height: 30px;
+			background-color: rgba(40, 40, 40, .3);
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+		}
+		.sctext:hover {
+			opacity: .5;
+		}
+	/*modal*/
+		#modal {
+			display: none;
+			background: rgba(0, 0, 0, .6);
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;top: 0;
+		}
+		#modal.active{
+			display: block;
+		}
+		.modal_up {
+			background: #fff;
+			width: 400px;
+			height: 300px;
+			position: fixed;
+			/*left: 40%; top: 40%;*/
+			left: 50%; top: 50%;
+			margin: -150px 0 0 -200px;
+		}
+		.uptitle{
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 20px;
+			line-height: 30px;
+		}
+		.upbody {
+			font-size: 15px;
+			line-height: 40px;
+			text-align: center;
+			padding: 30px;
+		}
+		.btn {
+			width: 80px;
+			height: 20px;
+			background: #ccc;
+			cursor: pointer;
+			font-size: 15px;
+			font-weight: bold;
+			text-align: center;
+			border-radius: 3px;
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+		}
+
+
+
+
+
+/*footer*/
+	footer {
+		float: right;
+	}
+	.bottom {
+		width: 800px;
+		height: 100px;
+		background: #ababab;
+	}
+	.copy {
+		width: 600px;
+		line-height: 100px;
+		float: left;
+		font-size: 14px;
+		text-align: center;
+	}
+	.site {
+		width: 200px;
+		height: 100px;
+		float: right;
+	}
+	/*sns*/
+	.sns {
+		float: right;
+		width: 200px;
+		height: 50px;
+	}
+	.sns ul {text-align: center;}
+	.sns ul li {
+		display: inline-block;
+	}
+	.sns img {
+		width: 45px;
+		height: 45px;
+		padding: 5px;
+	}
+	.sns img:hover {
+		opacity: .5;
+	}
+	/*familysite*/
+	.familysite{
+		float: right;
+		width: 200px;
+		height: 50px;
+	}
+	.familysite select {
+		float: right;
+		height: 30px;
+		width: 180px;
+		margin-top: 10px;
+		margin-right: 10px;
+		font-size: 14px;
+	}

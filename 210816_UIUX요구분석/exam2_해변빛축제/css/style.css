@@ -1,0 +1,381 @@
+@charset "utf-8";
+
+/*초기화*/
+	* {
+		margin: 0 auto;
+		padding: 0;
+		list-style: none;
+		font-family: '맑은 고딕';
+		color: #222328;
+	}
+	body {
+		width: 1000px;
+		/*height: 650px;*/
+		background: #fff;
+		font-size: 20px;
+	}
+	a {
+		text-decoration: none;
+		display: block;
+	}
+/*header*/
+	header {
+		float: left;
+		width: 200px;
+		height: 650px;
+		background: yellow;
+	}
+	.top {
+		float: left;
+		width: 200px;
+		height: 650px;
+		background: #eee;
+		position: absolute;
+	}
+	.logo {
+		width: 200px;
+		height: 40px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	.logo img {
+		margin-top: 5px;
+		margin-left: 15px;
+		/*float: left;*/
+	}
+	.menu {
+		width: 180px;
+		position: absolute;
+		top: 100px;
+		left: 10px;
+		text-align: center;
+		z-index: 1;
+	}
+	.navi>li {
+		width: 180px;
+	}
+	.navi>li>a {
+		width: 180px;
+		height: 40px;
+		font-size: 16px;
+		font-weight: bold;
+		color: #fff;
+		background: #222328;
+		line-height: 40px;
+	}
+	.navi>li>a:hover {
+		color: #ffff00;
+		background: #930;
+	}
+	.submenu {
+		display: none;
+		/*float: left;*/
+		width: 180px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 180px;
+		background: #aaa;
+		z-index: 1;
+	}
+	.submenu li>a {
+		width: 180px;
+		height: 40px;
+		font-size: 14px;
+		line-height: 40px;
+		font-weight: bold;
+		color: #fff;
+	}
+	.submenu li>a:hover {
+		background: #999;
+		color: #ffff00;
+	}
+
+
+/*bodywrap*/
+	.bodywrap {
+		float: left;
+		width: 800px;
+		height: 550px;
+	}
+	/*imgslide*/
+		.imgslide{
+			width: 800px;
+			height: 350px;
+			position: relative;
+		}
+		.imgslide>a {
+			position: absolute;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			border-right: 2px solid yellow;
+			transition: all 3s;
+		}
+		.imgtext {
+			width: 300px;height: 50px;
+			position: absolute;
+			top: 50%; left: 50%;
+			margin: -25px 0 0 -150px;
+			background: rgba(40, 40, 40, .3);
+			line-height: 50px;
+			text-align: center;
+			color: #fff;
+			font-weight: bold;
+		}
+	/*contents*/
+		.contents {
+			width: 800px;
+			height: 200px;
+			position: absolute;
+		}
+		/*tabmenu*/
+			.tabmenu {
+				width: 290px;
+				height: 180px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				margin-left: 5px;
+				float: left;
+			}
+			.tabmenu>li {
+				float: left;
+				width: 80px;
+				line-height: 30px;
+			}
+			.tabmenu>li>a {
+				font-size: 14px;
+				text-align: center;
+				background: #ccc;
+				border: 1px solid #ccc;
+				border-bottom: none;
+			}
+			.tabmenu>li>a:hover{
+				background: #eee;
+			}
+			.tabmenu>li:first-child>a {
+				border-right: none;
+			}
+			.tabmenu>li.active>a{
+				background: #fff;
+			}
+			.tabmenu>li div {
+				position: absolute;
+				left: 5px;
+				/*height: 0;*/
+				display: none;
+				/*overflow: hidden;*/
+			}
+			.tabmenu>li.active div {
+				display: block;
+				width: 288px;
+				height: 148px;
+				border: 1px solid #ddd;
+			}
+			/*notice*/
+			/*.notice{display: none;}*/
+			.notice ul {
+				width: 288px;
+				margin-top: 12px;
+				margin-bottom: 12px;
+			}
+			.notice li {
+				height: 32px;
+				line-height: 32px;
+				font-size: 13px;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			.notice li:nth-child(even){background: #ccc;}
+			.notice li span {
+				float: right;
+			}
+			.notice li:hover {
+				font-weight: bold;
+			}
+			/*gallery*/
+			/*.gallery {display: none;}*/
+			.gallery li {
+				float: left;
+				margin-top: 20px;
+				margin-left: 5px;
+			}
+			.gallery li img {
+				width: 70px;
+				height: 90px;
+				padding: 10px;
+			}
+			.gallery li:hover {
+				opacity: .5;
+			}
+
+
+
+		/*otherwrap*/
+			.otherwrap {
+				width: 500px;
+				height: 180px;
+				float: right;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				/*background: orange;*/
+			}
+			/*banner*/
+			.banner{
+				float: left;
+				position: relative;
+				width: 295px;
+				height: 180px;
+				/*margin-top: 10px;*/
+
+			}
+			.banner img:hover {opacity: .5;}
+			.banner img {
+				width: 295px;
+				height: 180px;
+			}
+			.bntext, .sctext{
+				position: absolute;
+				width: 200px;
+				height: 40px;
+				left: 50%;
+				top: 50%;
+				margin-top: -20px;
+				margin-left: -100px;
+				background: rgba(40, 40, 40, .3);
+				color: #fff;
+				text-align: center;
+				line-height: 40px;
+			}
+
+			/*shortcut*/
+			.shortcut{
+				float: right;
+				position: relative;
+				width: 200px;
+				height: 180px;
+				/*margin-left: 5px;*/
+			}
+			.shortcut img {
+				width: 200px;
+				height: 180px;
+			}
+			.sctext {
+				width: 100px;
+				margin-left: -50px;				
+			}
+			.shortcut .sctext:hover{opacity: .5;}
+
+
+/*modal*/
+	#modal {
+		display: none;
+		position: absolute;
+		left: 0; top: 0;
+		width: 100%;
+		/*height: 100%;*/
+		background: rgba(0, 0, 0, .6);
+		z-index: 100;
+		/*보이는 창 만큼만 배경이 회색인데 이를 전체 창으로 채우는 방법?*/
+		height: 100vh;
+	}
+	#modal.active{
+		display: block;
+	}
+	.modal_up {
+		background: #fff;
+		width: 400px;
+		height: 300px;
+		text-align: center;
+		position: fixed;
+		left: 50%; top: 50%;
+		margin-top: -150px;
+		margin-left: -200px;
+	}
+	.uptitle {
+		font-size: 20px;
+		line-height: 16px;
+		font-weight: bold;
+		margin-top: 20px;
+	}
+	.upbody {
+		font-size: 16px;
+		padding: 30px;
+		/*margin-top: 10px;*/
+		line-height: 30px;
+		word-break: keep-all;
+		/*text-align: center;*/
+		position: relative;
+	}
+	.btn {
+		width: 80px;
+		height: 20px;
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+		font-size: 15px;
+		font-weight: bold;
+		line-height: 20px;
+		background: #ccc;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+
+
+
+
+/*footer*/
+	footer {
+		float: left;
+		width: 800px;
+		height: 100px;
+		background: green;
+	}
+	.bottom {
+		width: 800px;
+		height: 100px;
+		background: #aaa;
+	}
+	.btlogo {
+		float: left;
+		width: 200px; height: 100px;
+		/*margin-top: 35px;*/
+		/*text-align: center;*/
+	}
+	.btlogo img {
+		width: 170px;
+		height: 34px;
+		margin-top: 33px;
+		margin-left: 15px;
+	}
+	/*site*/
+	.site {
+		float: right;
+		width: 600px;
+		height: 100px;
+	}
+	.btmenu{
+		width: 600px;
+		height: 50px;
+		text-align: center;
+		font-size: 14px;
+		line-height: 30px;
+	}
+	.btmenu li{
+		/*float: left;*/
+		/*float을 하면 inline이어서 가운데 정렬이 까다로울 수 있어
+		  inline-block을 하면 block이 되기 때문에 조금 수월해*/
+		display: inline-block;
+		width: 100px;
+		margin-top: 10px;
+	}
+	.btmenu li:hover {
+		font-weight: bold;
+	}
+	.copy{
+		width: 600px;
+		height: 50px;
+		text-align: center;
+		font-size: 14px;
+		line-height: 50px;
+	}

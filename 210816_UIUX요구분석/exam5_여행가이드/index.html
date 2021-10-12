@@ -1,0 +1,163 @@
+<!-- 어행정보 제공 클릭하면
+새로운 윈도우 창이 떠
+이름 		--
+이메일		--
+보내실말씀	--
+제출버튼 -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>여행가이드</title>
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<!-- w960 -->
+	<header class="all">
+		<div id="header_div" class="wrap">
+			<h1 class="logo">
+				<a href="#"><img src="https://via.placeholder.com/250x100" alt="상단로고"></a>
+				<!-- <a href="#"><img src="logo/logo.png" alt="상단로고"></a> -->
+			</h1>
+
+			<nav>
+				<ul class="nav">
+					<li><a href="#">여행가이드 소개</a></li>
+					<li><a href="#">국내여행지</a>
+						<ul class="submenu">
+							<li><a href="#">경기/강원</a></li>
+							<li><a href="#">충청도</a></li>
+							<li><a href="#">전라도</a></li>
+							<li><a href="#">경상도</a></li>
+						</ul>
+					</li>
+					<li><a href="#">해외여행지</a>
+						<ul class="submenu">
+							<li><a href="#">동남아</a></li>
+							<li><a href="#">남태평양</a></li>
+							<li><a href="#">유럽</a></li>
+							<li><a href="#">미주/중남미</a></li>
+						</ul>
+					</li>
+					<div class="clear"></div>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="clear"></div>
+
+	<!-- w960 -->
+	<div id="imgslide" class="all">
+		<div class="imgs">
+			<img src="images/slide/img1.jpg" alt="이미지1">
+			<!-- <img src="https://via.placeholder.com/960x400" alt="이미지1"> -->
+		
+			<img src="images/slide/img2.jpg" alt="이미지2">
+			<!-- <img src="https://via.placeholder.com/960x400" alt="이미지2"> -->
+		
+			<img src="https://via.placeholder.com/960x400" alt="이미지3">
+
+			<div class="welcome">
+				<h2>
+					<span>여행가이드에 오신 것을 환영합니다.</span>
+				</h2>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+
+	<!-- w960 -->
+	<div id="contents" class="wrap">
+		<!-- 공지사항 -->
+		<div class="notice">
+			<h2>공지사항</h2>
+			<table class="table">
+				<tr>
+					<th>내용</th>
+					<th>날짜</th>
+				</tr>
+				<tr>
+					<td><a href="#">다도해 풍광을 한눈에... 해남 땅끝 해안누리길 여행하기</a></td>
+					<td>2021-08-20</td>
+				</tr>
+				<tr>
+					<td><a href="#">국토순례 기차여행에 참가하는 학교, 청소년 단체 등</a></td>
+					<td>2021-08-20</td>
+				</tr>
+				<tr>
+					<td><a href="#">설악산 1월초 설경 절정, 기차 여행 상품이 출시되었다</a></td>
+					<td>2021-08-20</td>
+				</tr>
+				<tr>
+					<td><a href="#">신나는 겨울여행 대관령 눈꽃 축제, 고니골 빛축제로...</a></td>
+					<td>2021-08-20</td>
+				</tr>
+				<tr>
+					<td><a href="#">신나는 겨울여행 대관령 눈꽃 축제, 고니골 빛축제로...</a></td>
+					<td>2021-08-20</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- 정보나눔 -->
+		<div class="partner">
+			<h2>정보나눔</h2>
+			<div class="partner_info" align="center" onclick="winOpen();">
+				<!-- <img src="images/partner/info.png" alt="파트너 그림" width="400" height="150"> -->
+				<img src="https://via.placeholder.com/400x150" alt="파트너 그림">
+			</div>
+		</div>
+	<div class="clear"></div>
+
+		<!-- 아이콘 -->
+		<div class="icon">
+			<div class="icons">
+				<div class="imgbtn">
+					<!-- <img src="images/icons/icon1.png" alt="아이콘1" width="117" height="129"> -->
+					<img src="https://via.placeholder.com/117x129" alt="아이콘1">
+					<br>
+					<button>새소식</button>
+				</div>
+				<div class="imgbtn">
+					<!-- <img src="images/icons/icon1.png" alt="아이콘2" width="117" height="129"> -->
+					<img src="https://via.placeholder.com/117x129" alt="아이콘2">
+					<br>
+					<button>여행음악</button>
+				</div>
+				<div class="imgbtn">
+					<!-- <img src="images/icons/icon1.png" alt="아이콘3" width="117" height="129"> -->
+					<img src="https://via.placeholder.com/117x129" alt="아이콘3">
+					<br>
+					<button>여행메뉴얼</button>
+				</div>
+			</div><!-- icons -->
+		</div>
+	</div>
+	
+
+
+	<!-- w960 -->
+	<footer>
+		<div class="wrap">
+			<ul>
+				<li><a href="#">법적고지</a></li>
+				<li><a href="#">개인정보취급방침</a></li>
+				<li><a href="#">개인정보처리방침</a></li>
+			</ul>
+			<p>
+				상호명 : <br>
+				대표자 : <br>
+				개인정보관리책임자 : <br>
+				상담전화 : <br>
+				사업장주소 : <br>
+			</p>
+		</div>
+		<div class="clear"></div>
+	</footer>
+
+</body>
+</html>

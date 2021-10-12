@@ -1,0 +1,185 @@
+<!-- size info
+-헤더 ? 150 - minwidth 1000
+로고 250 100
+nav 700 ? - li 200 ?
+
+-슬라이드 100% ? img*3 1000 750 - innertext 300 40 
+-콘텐츠 1000 500
+notice 480 ?
+partner 480 ? (img: 375*139) - modal (img: 500*185)
+icon 960 ? (btn 160 ? = img 60*60 button 160 ?)*3
+
+-footer 100% 
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>인터넷 센터</title>
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header class="all">
+		<div id="header_logo" class="wrap">
+			<!-- logo -->
+			<!-- <div class="logo"><a href="#"><img src="img/logo.png" alt="로고"></a></div> -->
+			<div class="logo"><a href="#"><img src="https://via.placeholder.com/250x100" alt="로고"></a></div>
+
+			<!-- menu -->
+			<nav>
+				<ul class="nav">
+					<li><a href="#">센터소개</a>
+						<ul class="submenu">
+							<li><a href="#">연혁</a></li>
+							<li><a href="#">조직도</a></li>
+							<li><a href="#">구성원</a></li>
+						</ul>
+					</li>
+					<li><a href="#">센터업무</a>
+						<ul class="submenu">
+							<li><a href="#">하는 일</a></li>
+							<li><a href="#">포트폴리오</a></li>
+						</ul>
+					</li>
+					<li onclick="winOpen();">CONTACT</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<!-- slide -->
+	<div id="imageslide" class="wrap">
+		<div class="imgs">
+			<!-- <img src="https://via.placeholder.com/1000x350" alt="슬라이드이미지3"> -->
+			<img src="img/slide/img1.jpg" alt="이미지1">
+			<img src="img/slide/img2.jpg" alt="이미지2">
+			<img src="img/slide/img3.jpg" alt="이미지3">
+			<div class="welcome">
+				<h2>인터넷센터</h2> 방문을 환영합니다.
+			</div>
+		</div>
+	</div>
+
+	<!-- contents -->
+	<div id="contents" class="wrap">
+		<!-- notice -->
+		<div class="notice">
+			<h2>공지사항</h2>
+			<table class="table">
+				<tr>
+					<td><a href="#">인터넷센터에서 12회 시포지움을 개최합니다.</a></td>
+					<td>2021-08-25</td>
+				</tr>
+				<tr>
+					<td><a href="#">따듯한 인터넷을 위한 선플캠페인에 참여하세요.</a></td>
+					<td>2021-08-25</td>
+				</tr>
+				<tr>
+					<td><a href="#">[자료] 개인정보 보호를 위한 올바른 인터넷 사용법</a></td>
+					<td>2021-08-25</td>
+				</tr>
+				<tr>
+					<td><a href="#">스몸비에 대응하는 청소년 교육자료를 배포합니다.</a></td>
+					<td>2021-08-25</td>
+				</tr>
+				<tr>
+					<td><a href="#">인터넷센터와 함께하실 인재를 모집합니다.</a></td>
+					<td>2021-08-25</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- partner -->
+		<div class="partner">
+			<h2>Web Partner Site</h2>
+			<div class="partner_info">
+				<img src="https://via.placeholder.com/375x139" alt="파트너">
+				<!-- <img src="img/partner/partner.jpg" alt="파트너"> -->
+			</div>
+		</div>
+
+		<!-- modal -->
+		<div class="modal">
+			<div class="content">
+				<img src="https://via.placeholder.com/500x185" alt="파트너상세">
+				<!-- <img src="img/partner/partner_up.jpg" alt="파트너 상세"> -->
+				<button>닫기</button>
+			</div>
+		</div>
+
+		<!-- service -->
+		<div class="service">
+			<table>
+				<tr>
+					<td>
+						<div class="icon_content">
+							<div class="icons">
+								<!-- <div><img src="img/icons/icon1.jpg" alt="아이콘1"></div> -->
+								<div><img src="https://via.placeholder.com/60x60" alt="아이콘1"></div>
+								<h3>인터넷 정보수집 발굴</h3>
+								<div class="icons_body"><p>
+									인터넷 사례 조사<br>
+									인터넷 문화 관련 자료 수집<br>
+									인터넷 기술현황 관리<br>
+									기타 인터넷 관련 정보 수집
+								</p></div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="icon_content">
+							<div class="icons">
+								<!-- <div><img src="img/icons/icon2.jpg" alt="아이콘2"></div> -->
+								<div><img src="https://via.placeholder.com/60x60" alt="아이콘2"></div>
+								<h3>교육 프로그램 개발</h3>
+								<div class="icons_body"><p>
+									인터넷 교육 프로그램 연구<br>
+									인터넷 교육 도구 개발<br>
+									인터넷 특강<br>
+									기타 인터넷 교육 연구
+								</p></div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="icon_content">
+							<div class="icons">
+								<!-- <div><img src="img/icons/icon3.jpg" alt="아이콘3"></div> -->
+								<div><img src="https://via.placeholder.com/60x60" alt="아이콘3"></div>
+								<h3>역기능 예방 및 대응</h3>
+								<div class="icons_body"><p>
+									저작권 침해 예방/대응 연구<br>
+									불법 유해정보 유통 예방/대응 연구<br>
+									사이버범죄 예방/대응 연구<br>
+									인터넷중독 예방/대응 연구
+								</p></div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<footer>
+		<div class="wrap">
+			<ul>
+				<li><a href="#">법적고지</a></li>
+				<li><a href="#">개인정보취급방침</a></li>
+				<li><a href="#">개인정보처리방침</a></li>
+			</ul>
+			<p>
+				인터넷센터<br>
+				대표자 :<br>
+				개인정보취급책임자 :<br>
+				사업장주소 :
+			</p>
+		</div>
+		<div class="clear"></div>
+	</footer>
+</body>
+</html>

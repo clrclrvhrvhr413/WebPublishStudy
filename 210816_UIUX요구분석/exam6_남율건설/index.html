@@ -1,0 +1,152 @@
+<!-- size info
+-헤더 1000 100
+로고 200 40
+네비 600 40
+
+-bodywrap 1000 500
+--슬라이드 1000 300
+--콘텐츠 1000 200
+	notice 390 180
+	gallery 390 180 (img 125 145)
+	shortcut 200 180 (img 200 180)
+
+-footer 1000 100
+--copy 500 100
+--site 500 100
+	btmenu 300 50
+	familysite300 50
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>남율건설</title>
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+		<div class="top">
+			<h1 class="logo">
+				<img src="https://via.placeholder.com/200x40" alt="로고">
+			</h1>
+
+			<nav class="menu">
+				<ul class="navi">
+					<li><a href="#">메뉴1</a>
+						<ul class="submenu">
+							<li><a href="#">서브메뉴1</a></li>
+							<li><a href="#">서브메뉴2</a></li>
+							<li><a href="#">서브메뉴3</a></li>
+							<li><a href="#">서브메뉴4</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴2</a>
+						<ul class="submenu">
+							<li><a href="#">서브메뉴1</a></li>
+							<li><a href="#">서브메뉴2</a></li>
+							<li><a href="#">서브메뉴3</a></li>
+							<li><a href="#">서브메뉴4</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴3</a>
+						<ul class="submenu">
+							<li><a href="#">서브메뉴1</a></li>
+							<li><a href="#">서브메뉴2</a></li>
+							<li><a href="#">서브메뉴3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴4</a>
+						<ul class="submenu">
+							<li><a href="#">서브메뉴1</a></li>
+							<li><a href="#">서브메뉴2</a></li>
+							<li><a href="#">서브메뉴3</a></li>
+							<li><a href="#">서브메뉴4</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="bodywrap">
+		<div class="imgslide">
+			<a href="#">
+				<img src="https://via.placeholder.com/1000x300" alt="이미지1"><div>이미지 슬라이드1</div>
+			</a>
+			<a href="#">
+				<img src="https://via.placeholder.com/1000x300" alt="이미지2"><div>이미지 슬라이드2</div>
+			</a>
+			<a href="#">
+				<img src="https://via.placeholder.com/1000x300" alt="이미지3"><div>이미지 슬라이드3</div>
+			</a>
+		</div>
+
+		<div class="contents">
+			<div class="notice">
+				<div><a href="#">공지사항</a></div>
+				<ul>
+					<li><a href="#">공지사항1<span>2020.06.18</span></a></li>
+					<li><a href="#">공지사항2<span>2020.06.18</span></a></li>
+					<li><a href="#">공지사항3<span>2020.06.18</span></a></li>
+					<li><a href="#">공지사항4<span>2020.06.18</span></a></li>
+				</ul>
+			</div>
+
+			<div class="gallery">
+				<div><a href="#">갤러리</a></div>
+				<ul>
+					<li><a href="#"><img src="https://via.placeholder.com/125x145" alt="갤러리1"></a></li>
+					<li><a href="#"><img src="https://via.placeholder.com/125x145" alt="갤러리2"></a></li>
+					<li><a href="#"><img src="https://via.placeholder.com/125x145" alt="갤러리3"></a></li>
+				</ul>
+			</div>
+
+			<div class="shortcut">
+				<img src="https://via.placeholder.com/200x180" alt="바로가기 이미지">
+				<span>바로가기</span>
+			</div>
+		</div>
+	</div>
+
+	<div id="modal">
+		<div class="moup">
+			<h3>title</h3>
+			<div class="mobody">
+				안녕하세요. 공지사항을 클릭하였을 때 나오는 모당창입니다. 안에 텍스트가 가득가득합니다. 아래 닫기 버튼을 누르면 닫힙니다.
+			</div>
+			<div class="btn">닫기</div>
+		</div>
+	</div>
+
+
+	<footer>
+		<div class="bottom">
+			<div class="copy">
+				COPYRIGHT © WEBDEDIGN. ALL RIGHT RESERVED
+			</div>
+
+			<div class="site">
+				<div class="btmenu">
+					<ul>
+						<li><a href="#">하단메뉴1</a></li>
+						<li><a href="#">하단메뉴2</a></li>
+						<li><a href="#">하단메뉴3</a></li>
+					</ul>
+				</div>
+
+				<div class="familysite">
+					<select name="familysites">
+						<option value="site1">패밀리사이트1</option>
+						<option value="site1">패밀리사이트2</option>
+						<option value="site1">패밀리사이트3</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>
