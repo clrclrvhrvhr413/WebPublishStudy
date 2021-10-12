@@ -1,0 +1,236 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Playfair+Display&display=swap');
+/*font-family: 'Monoton', cursive;*/
+/*font-family: 'Playfair Display', serif;*/
+
+
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{
+	text-decoration: none;
+	color: #bbb;
+	outline: 0;
+}
+img{border: 0;}
+/*figure*/
+	figure {
+		position: fixed;
+		width: 100%; height: 100%;
+		opacity: .9;
+	}
+	figure img {width: 100%;}
+	h1{
+		position: fixed;
+		top: 40px; left: 40px;
+		z-index: 10;
+	}
+	h1 img {width: 280px;}
+/*header*/
+	header {
+		position: fixed;
+		top: 0; left: -420px;
+		width: 700px; height: 100%;
+		background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
+		transform: skewX(-40deg);
+	}
+	#gnb {
+		position: absolute;
+		top: 150px; right: 0;
+		width: 220px;
+	}
+	#gnb>li{
+		position: relative;
+	}
+	#gnb>li>a {
+		display: block;
+		width: 220px; height: 50px;
+		text-align: right;
+		color: #222;
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 3;
+		font-family: 'Playfair Display', serif;
+	}
+	#gnb>li>a em {
+		display: inline-block;
+		transform: skewX(40deg);
+		margin-right: 20px;
+	}
+	#gnb>li.on>a,
+	#gnb>li:hover>a{
+		background: #111;
+		color: #fff;
+	}
+	/*submenu*/
+		#gnb ul {
+			position: absolute;
+			top: 0; left: 0;
+			opacity: 0;
+			transition: all .5s;
+		}
+		#gnb ul a {
+			display: block;
+			width: 150px; height: 40px;
+			background: #222;
+			border-bottom: 1px solid #b9fb05;
+			font-weight: bold;
+			font-size: 16px;
+			line-height: 2.5;
+			color: #fff;
+			margin-bottom: 3px;
+			padding-left: 50px;
+			box-sizing: border-box;
+			transition: all .5s;
+		}
+		#gnb ul a:hover {
+			background: #b9fb05;
+			color: #222;
+		}
+		#gnb>li:hover ul {
+			opacity: .8;
+			left: 205px;
+		}
+		#gnb li.on ul {
+			opacity: .8;
+			left: 205px; top: -10px;
+			position: absolute;
+			z-index: 10;
+		}
+		#gnb li.on ul a:hover {
+			color: #222;
+		}
+/*sns*/
+	#sns {
+		position: fixed;
+		right: 0; top: 10px;
+		z-index: 10;
+	}
+	#sns li {
+		float: left;
+		margin-right: 30px;
+	}
+	#sns li i {
+		font-size: 25px;
+		color: #b9fb05;
+		opacity: .5;
+		transform: scale(1.0);
+		transition: all .5s;
+	}
+	#sns li i:hover {
+		opacity: 1;
+		transform: scale(1.4);
+	}
+
+/*txtBox*/
+	.txtBox {
+		position: fixed;
+		top: 200px; right: 70px;
+		width: 340px; height: 280px;
+	}
+	.txt {
+		position: absolute;
+		top: 200px; right: 0;
+		font-family: 'Playfair Display', serif;
+		color: #777;
+		font-size: 34px;
+		letter-spacing: -2px;
+	}
+	.txt b {
+		font-weight: bold;
+		font-size: 34px;
+		font-family: arial;
+		color: #b9fb05;
+		margin-left: 20px;
+	}
+	.tit {
+		position: absolute;
+		top: 0; right: 0;
+		font-size: 160px;
+		font-family: 'Monoton', cursive;
+		color: #b9fb05;
+		letter-spacing: -1px;
+	}
+	.tit em {
+		font-size: 50px;
+		font-family: 'Playfair Display', serif;
+		color: #fff;
+	}
+
+/*side*/
+	#side {
+		position: fixed;
+		width: 800px; height: 100%;
+		right: -800px; bottom: 0;
+		background: #111;
+		opacity: .5;
+		transform: skewX(-40deg);
+		transition: all .5s;
+		cursor: pointer;
+	}
+	#side:hover {
+		right: -480px;
+	}
+	#side>.con {
+		position: absolute;
+		left: 150px; bottom: 0;
+		width: 400px; height: 100%;
+		background: #000;
+		transition: all 1s;
+	}
+	#side:hover>.con {
+		left: 50px;
+	}
+	#side>.con>p {
+		position: absolute;
+		width: 300px; height: 100px;
+		bottom: 0;
+		margin-left: 50px;
+		transform: translateX(200px);
+		transition: all 1.2s;
+	}
+	#side:hover>.con>p {
+		transform: translateX(0px);
+	}
+	#side .con p:nth-child(1){bottom: 270px;}
+	#side .con p:nth-child(2){bottom: 160px;}
+	#side .con p:nth-child(3){bottom: 50px;}
+	#side .con p em {
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 1.7;
+		font-family: arial;
+		color: #a0bd50;
+		display: block;
+		transform: skewX(40deg);
+	}
+	#side .con p img {
+		width: 300px; height: 70px;
+		opacity: .3;
+		transition: all .5s;
+	}
+	#side .con p img:hover {
+		opacity: 1;
+	}
+	#side:hover>.btnContents{
+		left: 350px;
+	}
+	.btnContents {
+		position: absolute;
+		width: 150px; height: 50px;
+		bottom: 20px;
+		left: 100px;
+		transform: skewX(40deg);
+	}
+	.btnContents i {
+		position: absolute;
+		right: 0; bottom: 0;
+		font-size: 60px;
+		color: #b9fb05;
+	}
+	.btnContents i:nth-child(1){animation: ani linear 1.5s 0s infinite;}
+	.btnContents i:nth-child(2){animation: ani linear 1.5s 0.5s infinite;}
+	.btnContents i:nth-child(3){animation: ani linear 1.5s 1s infinite;}
+	@keyframes ani {
+		0%{right: 0px; opacity: 1; transform: scale(1.0);}
+		100%{right: 100px; opacity: 0; transform: scale(1.5);}
+	}
