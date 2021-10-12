@@ -1,0 +1,202 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Handlee&display=swap');
+/*font-family: 'Abril Fatface', cursive;*/
+/*font-family: 'Amatic SC', cursive;*/
+/*font-family: 'Handlee', cursive;*/
+
+
+html {
+	font-family: 'Handlee', cursive;
+	font-size: 16px;
+	line-height: 1.5;
+}
+body {background: #656565;}
+img {vertical-align: middle;}
+button {outline: none;}
+::selection {background: #b3d4fc; text-shadow: none;}
+
+.page-main {
+	position: relative;
+}
+.page-main>div {
+	padding: 50px 0 100px;
+}
+/*theme*/
+	#buttons1{
+		background: #ebc000;
+	}
+	#images {
+		background: #ff8873;
+	}
+	#buttons2{
+		background: #00a896;
+		height: 340px;
+	}
+/*inner*/
+	#buttons1 .inner,
+	#images .inner,
+	#buttons2 .inner {
+		position: relative;
+		width: 976px;
+		margin: 0 auto;
+	}
+/* h2 title*/
+	.page-main>div>h2 {
+		font-family: 'Amatic SC', cursive;
+		color: #fff;
+		margin: 0 0 50px;
+		text-align: center;
+		font-weight: normal;
+		letter-spacing: 0.15em;
+	}
+/*inner content*/
+	/*buttons1*/
+		#buttons1 button {
+			display: block;
+			float: left;
+			width: 224px; height: 80px;
+			margin: 0 10px 20px;
+			font-size: 16px;
+			letter-spacing: 0.15em;
+			background-color: #fff;
+			color: #ebc000;
+			border: none;
+			border-radius: 20px;
+		}
+		/*2행*/
+		#buttons1 button {
+			position: relative;
+		}
+		#buttons1 button {
+			border: 0px solid rgba(174,94,155,1);
+		}
+		#buttons1 button .bg {
+			position: absolute;
+			top: 0; left: 0;
+			width: 0; height: 100%;
+			overflow: hidden;
+		}
+		#buttons1 button span span {
+			display: block;
+			width: 224px; height: 80px;
+			line-height: 80px;
+			color: #fff; background: #ae5e9b;
+			border-radius: 20px;
+		}
+	/*images*/
+		#images p {
+			position: relative;
+			width: 580px; height: 380px;
+			margin: 0 auto 80px;
+			overflow: hidden;
+			background: #000;
+		}
+		#images p img {
+			width: 100%; height: 100%;
+			position: absolute; top: 0;
+		}
+		#images p strong {
+			position: absolute;
+			bottom: 0;
+			display: block;
+			width: 540px; height: 30px;
+			padding: 20px;
+			background: rgba(0, 0, 0, .5);
+			font-family: 'Handlee', cursive;
+			color: #fff; font-size: 20px;
+			letter-spacing: 1.3px;
+			z-index: 1;
+			opacity: 0;
+		}
+		#images p span {
+			display: block;
+			position: absolute;
+			top: 0; z-index: 0;
+			width: 100%; height: 100%;
+			background: rgba(255, 155, 0, .2);
+			box-shadow: inset 0 0 50px rgba(50, 30, 0, .6),
+						inset 0 0 100px rgba(50, 30, 0, .3);
+			opacity: 0;
+		}
+
+		#images p:nth-child(2) strong {left: -200%; opacity: 0;}
+
+		#images p:nth-child(3) strong {bottom: -80px; opacity: 0;}
+	/*buttons2*/
+		#buttons2 button {
+			/*overflow: hidden;*/
+			position: absolute;
+			display: block;
+			width: 224px; height: 224px;
+			margin: 0 0 35px;
+			font-size: 16px;
+			letter-spacing: 1px;
+			background-color: #fff;
+			color: #00a896;
+			border: none;	
+			border-radius: 50%;
+		}
+		#buttons2 button:hover {
+			background-color: #E2B76B;
+			color: #000;
+		}
+		#buttons2 button:nth-child(1) {left: 10px;}
+		#buttons2 button:nth-child(2) {left: 254px;}
+		#buttons2 button:nth-child(3) {left: 498px;}
+		#buttons2 button:nth-child(4) {left: 742px;}
+
+		#buttons2 button span {
+			/*color: rgb(0,168,150);*/
+			display: block; padding-top: 170px;
+		}
+		#buttons2 button span img {
+			position: absolute;
+			/*left: 10px; top: 15px;*/
+			bottom: 40px; left: 20px;
+			width: 80%;
+			/*width: 100%;*/
+		}
+		#buttons2 button span img:last-child{opacity: 0;}
+	/* aside */
+		.page-main>aside {
+			position: fixed;
+			left: -350px;
+			width: 350px; height: 100%;
+			background-color: rgba(0, 0, 0, .8);
+		}
+		.page-main>aside ul {
+			position: absolute;
+			top: 50px; left: 114px;
+			margin: 0; padding: 0;
+		}
+		.page-main>aside li {
+			width: 192px; height: 192px;
+			margin: 0 0 20px;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		.page-main>aside li img {width: 150%;}
+		.page-main>aside img {
+			width: 100%;
+		}
+		.page-main>aside button {
+			display: block;
+			position: absolute;
+			width: 52px; height: 132px;
+			top: 150px; left: 350px;
+			background-color: rgba(0, 0, 0, .8);
+			margin: 0; padding: 2px;
+			/*padding: 0;*/
+			border: none;
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+
+
+/*inner clear*/
+	.clearfix:before,
+	.clearfix:after {
+		clear: both;
+		content: "";
+		display: block;
+	}

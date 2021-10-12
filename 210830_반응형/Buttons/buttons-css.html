@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="../jquery/jquery-3.6.0.min.js"></script>
+	<title>BUTTONS-css</title>
+	<style type="text/css">
+		:root {
+			--orange : #F5C043;
+			--violet : #9146CA
+		}
+		*{margin: 0; padding: 0;}
+		button {
+			display: block;
+			width: 150px; height: 70px;
+			padding: 20px 30px;
+			margin: 10px auto;
+			box-sizing: border-box;
+			background: var(--orange);
+			color: #fff;
+			font-size: 16px;
+			border-radius: 10px;
+			border: 0px solid var(--violet);
+
+			transition: .3s linear;
+			position: relative;
+			overflow: hidden;
+		}
+		#btn1:hover{
+			background:var(--violet);
+			color: var(--orange);
+		}
+		#btn2:hover{
+			border: 5px solid var(--violet);
+			color: var(--violet);
+		}
+
+		.bg {
+			display: block;
+			position: absolute;
+			left: 0; top: 0;
+			width: 0px; height: 70px;
+			background: var(--violet);
+			transition: .5s;
+		}
+		#btn3:hover .bg{
+			width: 150px;
+		}
+		.txt {
+			position: absolute;
+			left: 0; right: 0; top: 0;
+			height: 70px;
+			line-height: 70px;
+			color: #fff;
+		}
+		
+	</style>
+</head>
+<body>
+	<button id="btn1">Albatross</button>
+	<button id="btn2">Eagle</button>
+	<button id="btn3">
+		<span class="bg"></span>
+		<span class="txt">Ibis</span>
+	</button>
+
+	<script>
+		
+
+		$(function(){
+			
+		})
+	</script>
+</body>
+</html>
