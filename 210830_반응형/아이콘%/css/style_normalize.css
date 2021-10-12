@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+body {
+	background: pink;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {display: block;}
+audio, canvas, video {display: inline-block;}
+audio:not([controls]){display: none; height: 0;}
+[hidden],template{display: none;}
+html {font-family: sans-serif;}
+body {margin: 0;}
+a {background: transparent;}
+a:focus {outline: thin dotted;}
+a:active, a:hover {outline: 0;}
+h1 {font-size: 2em; margin: 0.67em 0;}
+b,strong {font-weight: bold;}
+figure{margin: 0;}
+button, input,select, textarea {
+	font-family: inherit;
+	font-size: 100%;
+	margin: 0;
+}
+button, input {line-height: normal;}
+button, select {text-transform: none;}
+button, html input[type='button'], input[type="submit"],input[type="reset"] {cursor: pointer;}
+button, html input[disabled] {cursor: default;}
+input[type="checkbox"],input[type="radio"] {box-sizing: border-box; padding: 0;}
+input[type="search"]{box-sizing: content-box;}
+textarea{overflow: auto; vertical-align: top;}
+table {border-collapse: collapse; border-spacing: 0;}
