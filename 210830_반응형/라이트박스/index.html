@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>라이트박스</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<header>
+		<h1>LIGHT BOX</h1>
+		<img onclick='lightbox_open(1)' class="thumb" src="img/img1.png" alt="image1">
+		<img onclick='lightbox_open(2)' class="thumb" src="img/img2.png" alt="image2">
+		<img onclick='lightbox_open(3)' class="thumb" src="img/img3.png" alt="image3">
+	</header>
+
+	<div id="block"></div>
+	<div id="lightbox">
+		<h1>Lorem Ipsum</h1>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+		<figure>
+			<img src="img/img1.png" alt="image1">
+			<img src="img/img2.png" alt="image2">
+			<img src="img/img3.png" alt="image3">
+		</figure>
+		<div class="indicator">
+			<button onclick="change_img(this.innerHTML)">1</button>
+			<button onclick="change_img(this.innerHTML)">2</button>
+			<button onclick="change_img(this.innerHTML)">3</button>
+		</div>
+		<div onclick="lightbox_close()" class="btn_close">X</div>
+	</div>
+	<!-- <script src="script.js"></script> -->
+	<script type="text/javascript">
+		var block = document.querySelector('#block');
+		var lightbox = document.querySelector('#lightbox');
+		var indicator = document.querySelectorAll('.indicator button');
+
+		function lightbox_open(i) {
+			block.setAttribute('class','active');
+			lightbox.setAttribute('class','active');
+			indicator[i-1].focus();
+			change_img(i);
+		}
+		function lightbox_close() {
+			block.removeAttribute('class');
+			lightbox.removeAttribute('class');
+		}
+		function change_img(index){
+			var imgs = document.querySelectorAll('figure img');
+			for(var i=0;i<imgs.length;i++){
+				imgs[i].removeAttribute('class');
+			}
+			imgs[index-1].setAttribute('class','active');
+		}
+	</script>
+</body>
+</html>
