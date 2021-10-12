@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>투어리스트인투어</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- <script src="js/jquery-3.6.0.min.js"></script> -->
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<!-- swiper plugin -->
+	<script src="js/swiper.min.js"></script>
+	<script src="js/jquery.smooth-scroll.min.js"></script>
+	 
+	<script src="js/common.js"></script>
+	<script> //swiper plugin
+		$(document).ready(function(){
+			var swiper = new Swiper('.swiper-container',{
+				loop:true,
+				autoplay:5500,
+				autoplayDisableOnInterraction:false,
+				pagination:'.swiper-pagination',
+				paginationClickable:true
+			});
+		})
+	</script>
+	<!-- class="main_rolling_pc" -->
+	<script src="js/rollmain.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css"> <!-- plugin -->
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+</head>
+<body>
+	<ul class="skipnavi">
+		<li><a href="#container">본문내용</a></li>
+	</ul>
+	<div id="wrap">
+		<!-- 로고, 네비, 회워가입/로그인 -->
+		<header id="header">
+			<div class="header_area box_inner clear">
+				<!-- logo -->
+				<h1><a href="#">Tourist in tour</a></h1>
+				<p class="openMognb">
+					<!-- 모바일용 햄버거버튼 -->
+					<a href="#">
+						<b class="hdd">메뉴열기</b>
+						<span></span>
+						<span></span>
+						<span></span>
+					</a>
+				</p>
+				<!-- navigation -->
+				<div class="header_cont">
+					<!-- 로그인/회원가입 -->
+					<ul class="util clear">
+						<li><a href="#">로그인</a></li>
+						<li><a href="#">회원가입</a></li>
+					</ul>
+					<!-- 네비 -->
+					<nav>
+						<ul class="gnb clear">
+							<li>
+								<a href="javascript:;" class="openAll1">여행정보</a>
+								<div class="gnb_depth gnb_depth_2_1">
+									<ul class="submenu_list">
+										<li><a href="#">국내</a></li>
+										<li><a href="#">해외</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="javascript:;" class="openAll2">고객센터</a>
+								<div class="gnb_depth gnb_depth_2_2">
+									<ul class="submenu_list">
+										<li><a href="#">공지사항</a></li>
+										<li><a href="#">문의하기</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="javascript:;" class="openAll3">상품투어</a>
+								<div class="gnb_depth gnb_depth_2_3">
+									<ul class="submenu_list">
+										<li><a href="#">프로그램 소개</a></li>
+										<li><a href="#">여행자료</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="javascript:;" class="openAll4">티켓/가이드</a>
+								<div class="gnb_depth gnb_depth_2_4">
+									<ul class="submenu_list">
+										<li><a href="#">항공</a></li>
+										<li><a href="#">호텔</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</nav>
+					<p class="closePop">
+						<!-- 모바일용 닫기 버튼 -->
+						<a href="#">닫기</a>
+					</p>
+				</div>
+			</div>
+		</header>
+
+		<!-- 콘텐츠 영역 -->
+		<div id="container">
+			<div class="main_rolling_pc">
+				<div class="visualRoll">
+					<ul class="viewImgList">
+						<li class="imglist0">
+							<div class="roll_content">
+								<a href="javascript:;">
+									<img src="img/img_slidecontent01.png" alt="trust&information">
+								</a>
+								<p class="roll_txtline">BE TOURIST FOR BETTER LIFE</p>
+							</div>
+						</li>
+						<li class="imglist1">
+							<div class="roll_content">
+								<a href="javascript:;">
+									<img src="img/img_slidecontent02.png" alt="trust&information">
+								</a>
+								<p class="roll_txtline">BE TOURIST FOR BETTER LIFE</p>
+							</div>
+						</li>
+						<li class="imglist2">
+							<div class="roll_content">
+								<a href="javascript:;">
+									<img src="img/img_slidecontent03.png" alt="trust&information">
+								</a>
+								<p class="roll_txtline">BE TOURIST FOR BETTER LIFE</p>
+							</div>
+						</li>
+					</ul>
+
+					<div class="rollbtnArea">
+						<ul class="rollingbtn">
+							<li class="seq butt0">
+								<a href="#butt"><img src="img/btn_rollbutt_on.png" alt="1번"></a>
+							</li>
+							<li class="seq butt1">
+								<a href="#butt"><img src="img/btn_rollbutt_off.png" alt="2번"></a>
+							</li>
+							<li class="seq butt2">
+								<a href="#butt"><img src="img/btn_rollbutt_off.png" alt="3번"></a>
+							</li>
+							<li class="rollstop">
+								<a href="#butt" class="stop"><img src="img/btn_roll_stop.png" alt="멈춤"></a>
+							</li>
+							<li class="rollplay">
+								<a href="#butt" class="play"><img src="img/btn_roll_play.png" alt="재생"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div><!-- .main_rolling_pc -->
+
+			<div class="main_rolling_mobile">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<a href="javascript:;">
+								<img src="img/mainslide_mob01.jpg" alt="여행...어디로 가세요?">
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;">
+								<img src="img/mainslide_mob02.jpg" alt="여행...어디로 가세요?">
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;">
+								<img src="img/mainslide_mob03.jpg" alt="여행...어디로 가세요?">
+							</a>
+						</div>
+					</div><!-- .swiper-wrapper -->
+
+					<div class="swiper-pagination"></div><!-- .swiper-pagination -->
+				</div>
+			</div><!-- .main_rolling_mobile -->
+			
+			<div class="about_area">
+				<h2>다시 찾는 인기 여행지 <b>TOP 3</b></h2>
+				<div class="about_box">
+					<ul class="place_list box_inner clear">
+						<li>
+							<a href="#" onclick="$('.popup_base').css('height',$(document).height());
+												 $('.contact_pop').show();">
+								<!-- 팝업창의 높이가 메인창의 높이와 연관짓기 위해 -->
+								<img class="img_topplace" src="img/img_topplace01.jpg" alt="이탈리아 피렌체 대성당">
+								<h3>이탈리아 피렌체 대성당</h3>
+								<p class="txt">정식 명칭은 ‘꽃의 성모 마리아’라는 뜻의 산타 마리아 델 피오레 대성당(Cattedrale di Santa Maria del Fiore)이다.</p>
+								<span class="view">VIEW</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" onclick="$('.popup_base').css('height',$(document).height());
+												 $('.space_pop').show();">
+								<!-- 팝업창의 높이가 메인창의 높이와 연관짓기 위해 -->
+								<img class="img_topplace" src="img/img_topplace02.jpg" alt="프랑스 파리 루브르박물관">
+								<h3>프랑스 파리 루브르박물관</h3>
+								<p class="txt">소장품의 수와 질 면에서 메트로폴리탄 미술관, 대영박물관과 함께 세계적으로 손꼽히는 박물관이다.</p>
+								<span class="view">VIEW</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" onclick="$('.popup_base').css('height',$(document).height());
+												 $('.program_pop').show();">
+								<!-- 팝업창의 높이가 메인창의 높이와 연관짓기 위해 -->
+								<img class="img_topplace" src="img/img_topplace03.jpg" alt="대한민국 제주도">
+								<h3>대한민국 제주도</h3>
+								<p class="txt">제주도는 2002년 12월 16일 유네스코가 기후 및 생물 다양성의 생태계적 가치를 인정하여 제주도를 생물권보전지역을 지정하였다.</p>
+								<span class="view">VIEW</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div><!-- .about_area -->
+
+			<div class="appbbs_area">
+				<div class="appbbs_box box_inner clear">
+					<h2 class="hdd">상담과 최근 게시물</h2>
+					<p class="app_line">
+						<a href="javascript:;">카카오톡 1:1 상담</a>
+						<a href="javascript:;">전화 상담 신청</a>
+					</p>
+					<div class="bbs_line">
+						<h3>NOTICE</h3>
+						<ul class="notice_recent">
+							<li><a href="javascript:;">이번 여름 휴가 제주 갈까? 미션 투어(여행경비 50만원 지원)</a></li>
+							<li><a href="javascript:;">박물관 미션 투어 응모 당첨자 발표</a></li>
+							<li><a href="javascript:;">추석 연휴 티켓/투어 배송 및 직접 수령 안내</a></li>
+							<li><a href="javascript:;">투어리스트인투어에서 매월 실시하는 정기점검 안내</a></li>
+							<li><a href="javascript:;">하롱베이 서비스 OPEN! (여행정보, 가이드북, 가이드맵)</a></li>
+						</ul>
+					</div>
+				</div>
+			</div><!-- .appbbs_area -->
+		</div>
+
+		<footer>
+			<div class="footer_area box_inner">
+				<ul class="foot_list clear">
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보취급방침</a></li>
+				</ul>
+				<h2>투어리스트인투어</h2>
+				<p class="addr">
+					서울특별시 종로구 관철동
+					<span class="gubun">/</span>
+					<span class="br_line">대표전화<span class="space0">02-1234-5678</span><span class="gubun">/</span></span>
+					<span class="br_line">E-mail : <span class="space0">abc@company.com</span></span>
+				</p>
+				<p class="copy box_inner">Copyright TouristInTour all right reserved.</p>
+
+				<!-- icon -->
+				<ul class="snslink clear">
+					<li><a href="#">facebook</a></li>
+					<li><a href="#">kakaoTalk</a></li>
+					<li><a href="#">line</a></li>
+					<li><a href="#">twitter</a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+
+	<!-- 퀵메뉴 -->
+	<h2 class="hdd">빠른 링크 : 전화문의, 카카오톡, 오신는 길, 위로 가기</h2>
+	<div class="quick_area">
+		<ul class="quick_list">
+			<li>
+				<a href="tel:010-1234-5678">
+					<h3>전화문의</h3>
+					<p>010-1234-5678</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<h3>카카오톡<em>상담</em></h3>
+					<p>1:1상담</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<h3 class="to_contact">오시는 길</h3>
+				</a>
+			</li>
+		</ul>
+		<p class="to_top"><a href="#layout0" class="s_point">TOP</a></p>
+	</div>
+
+	<!-- 제이쿼리 플러그인 -->
+
+
+	<!-- contact_pop -->
+	<div class="popup_base contact_pop">
+		<div class="pop_content">
+			<p class="btn_xpop">
+				<a href="#" onclick="$(this).parent().parent().parent().hide();">닫기</a>
+			</p>
+			<ul class="pop_list">
+				<li>
+					<h2 class="tit_pop">이탈리아 피렌체 대성당</h2>
+					<img class="pop_img" src="img/img_pop1_1.jpg" alt="이탈리아 피렌체 대성당">
+					<div class="pop_txt">
+						<p>필리포 브루넬레스키가 설계한 돔으로 유명하며, 실외는 하얀색으로 윤곽선을 두른 초록색과 분홍색의 대리석 판으로 마감되어 있다.</p>
+					</div>
+				</li>
+			</ul>
+		</div><!-- .pop_content -->
+	</div>
+
+	<!-- space_pop -->
+	<div class="popup_base space_pop">
+		<div class="pop_content">
+			<p class="btn_xpop">
+				<a href="#" onclick="$(this).parent().parent().parent().hide();">닫기</a>
+			</p>
+			<ul class="pop_list">
+				<li>
+					<h2 class="tit_pop">프랑스 파리 루브르박물관</h2>
+					<img class="pop_img" src="img/img_pop2_1.jpg" alt="프랑스 파리 루브르박물관">
+					<div class="pop_txt">
+						<p>루브르궁은 프랑스 파리의 센 강변에 있는 궁전이다. 본래 왕궁이었던 것을 현재는 미술관으로 사용하고 있다.</p>
+					</div>
+				</li>
+				<li>
+					<h2 class="tit_pop">모나리자</h2>
+					<img class="pop_img" src="img/img_pop2_2.jpg" alt="모나리자">
+					<div class="pop_txt">
+						<p>"모나"는 유부녀 이름 앞에 붙이는 이탈리아어 경칭이고, "리자"는 초상화의 모델이 된 여인의 이름이다.</p>
+					</div>
+				</li>
+			</ul>
+		</div><!-- .pop_content -->
+	</div>
+
+	<!-- program_pop -->
+	<div class="popup_base program_pop">
+		<div class="pop_content">
+			<p class="btn_xpop">
+				<a href="#" onclick="$(this).parent().parent().parent().hide();">닫기</a>
+			</p>
+			<ul class="pop_list">
+				<li>
+					<h2 class="tit_pop">대한민국 제주도</h2>
+					<img class="pop_img" src="img/img_pop3_1.jpg" alt="대한민국 제주도">
+					<div class="pop_txt">
+						<p>대한민국에서 가장 큰 섬인 제주도 본섬을 비롯하여 마라도, 우도, 추자군도 등을 포함한 유인도 8개, 무인도 55개로 구성되어 있다.</p>
+					</div>
+				</li>
+			</ul>
+		</div><!-- .pop_content -->
+	</div>
+
+
+	<script type="text/javascript">
+		$(function(){
+			
+		});
+	</script>
+</body>
+</html>

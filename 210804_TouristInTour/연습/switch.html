@@ -1,0 +1,70 @@
+<!-- 주요 기능
+		알약 모양의 switch를 구현한다.
+		기본 형태는 스위치 버튼이 좌측에 위치한다. (이를 off라 지칭한다.)
+		버튼을 클릭할 경우, 버튼이 우측에 위치한다. (이를 on이라 지칭한다.)
+		on일 경우, 버튼을 제외한 스위치의 배경색은 파란색이다.
+		off일 경우, 버튼을 제외한 스위치의 배경색은 흰색이다.
+		on ◄ ► off 의 배경색은 1초, 버튼은 .5초 동안 변화한다.
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>css로 switch 구현하기</title>
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<style type="text/css">
+		.switch {
+			width: 150px;
+			height: 80px;
+			background: skyblue;
+			/*z-index: 0;*/
+			border-radius: 50px;
+			position: relative;
+			margin: 30px auto;
+		}
+		.switch:before {
+			content: "";
+			width: 140px;
+			height: 70px;
+			background: #fff;
+			/*z-index: 1;*/
+			position: absolute;
+			border-radius: 40px;
+			left: 5px;
+			top: 5px;
+			transition-duration: 1s;
+		}
+		.switch:after {
+			content: "";
+			width: 60px;
+			height: 60px;
+			background: #fff;
+			border: 1px solid #ccc;
+			position: absolute;
+			border-radius: 40px;
+			top: 10px;
+			left: 10px;
+			transition-duration: .5s;
+		}
+		.switchOn:after {
+			left: 80px !important;
+		}
+		.switchOn:before {
+			background: blue;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="switch"></div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.switch').click(function(){
+				$(this).toggleClass('switchOn');
+			})
+		})
+	</script>
+</body>
+</html>

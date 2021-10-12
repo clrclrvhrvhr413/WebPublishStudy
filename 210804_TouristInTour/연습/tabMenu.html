@@ -1,0 +1,221 @@
+<!-- 주요 기능
+		장르 탭을 클릭하면 각각의 목록이 아래에 보인다.
+		클릭한 탭의 배경색은 흰색이다.
+		각 목록의 번호가 좌측에 나타난다.(하드코딩 X) -> 굳이? 그냥 넣는게 더 나은 듯..
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>탭 메뉴</title>
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<style type="text/css">
+	*{
+		color: #333;
+	}
+	body {
+		width: 600px;
+		margin: 10px auto;
+	}
+		a,span,p {
+			display: inline-block;
+		}
+		.toplist {
+			width: 600px;
+			height: 450px;
+			background: #fff;
+		}
+		.toplist li{
+			border-bottom: 1px solid #ccc;
+			height: 80px;
+		}
+		.toplist li span {
+			float: left;
+			width: 280px;
+			line-height: 80px;
+			margin-left: 20px;
+		}
+		.toplist .listhead {
+			height: 37px;
+		}
+		.toplist .listhead span {
+			float: left;
+			width: 300px;
+			height: 37px;
+			line-height: 37px;
+			margin-left: 0;
+			text-align: center;
+		}
+		.toplist .listhead span:first-child {
+			width: 200px;
+		}
+		.toplist li div {
+			float: left;
+			width: 200px; height: 80px;
+			box-sizing: border-box;
+		}
+		.toplist li div p {
+			width: 50%; height: 100%;
+			line-height: 80px;
+			font-weight: bold;
+			text-align: center;
+		}
+		.toplist li div img {
+			width: 70px; height: 70px;
+			margin: 5px 20px 5px 0;
+			cursor: pointer;
+			float: right;
+		}
+		.genre>li>a {
+			width: 40px;
+			text-align: center;
+			font-size: 17px;
+			color: #ccc;
+			border: 1px solid #ccc;
+			border-right: none;
+			/*border-bottom: none;*/
+		}
+		.genre>li:last-child>a {
+			border-right: 1px solid #ccc;
+		}
+	.genre {
+		position: relative;
+	}
+	.genre>li {
+		float: left;
+		width: 40px;
+	}
+	.genre>li>.toplist{
+		display: none;
+		position: absolute;
+		left: 0;top: 24px;
+		border-top: 1px solid #ccc;
+		z-index: -1;
+	}
+	.genre>li.active>a{
+		font-weight: bold;
+		color: #333;
+		border-bottom: 2px solid #fff;
+	}
+	.genre>li.active>.toplist {
+		display: block;
+	}
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<h3>장르음악</h3>
+	</header>
+
+	<!-- w500 h450 -->
+	<div class="main">
+		<ul class="genre">
+			<li class="g1 active">
+				<a href="#">가요</a>	<!-- w55 h27 -->
+				<ul class="toplist">
+					<li class="listhead"><!-- w500 h37 -->
+						<span>번호</span><!-- w175 h37 -->
+						<span>곡정보</span><!-- w325 h37 -->
+					</li>
+					<li><!-- w500 h76 -->
+						<div><p></p><img src="https://via.placeholder.com/70"></div>
+						<span>LO$ER=LO♡ER</span>
+					</li>
+					<li>
+						<div><p></p><img src="https://via.placeholder.com/70"></div>
+						<span>Make Love (Feat. Zion.T)</span>
+					</li>
+					<li>
+						<div><p></p><img src="https://via.placeholder.com/70"></div>
+						<span>Falling</span>
+					</li>
+					<li>
+						<div><p></p><img src="https://via.placeholder.com/70"></div>
+						<span>Replay (2021 Remastered)</span>
+					</li>
+				</ul>
+			</li>
+
+			<li class="g2">
+				<a href="#">POP</a>
+				<ul class="toplist">
+					<li class="listhead">
+						<span>번호</span>
+						<span>곡정보</span>
+					</li>
+					<li>
+						<div><p></p><img src="https://via.placeholder.com/70"></div>
+						<span>AGONY</span>
+					</li>
+					<li>
+						<div><p></p><img src="https://via.placeholder.com/70"></div>
+						<span>Cositas de Novios</span>
+					</li>
+					<li>
+						<div><p></p><img src="https://via.placeholder.com/70"></div>
+						<span>Party de Gangster</span>
+					</li>
+					<li>
+						<div><p></p><img src="https://via.placeholder.com/70"></div>
+						<span>La 2da de Dios Me Libre</span>
+					</li>
+				</ul>
+			</li>
+
+			<li class="g3">
+				<a href="#">OST</a>
+				<ul class="toplist">
+					<li class="listhead">
+						<span>번호</span>
+						<span>곡정보</span>
+					</li>
+					<li>
+						<div><p></p><img src="https://via.placeholder.com/70"></div>
+						<span>a hollow shadow</span>
+					</li>
+					<li>
+						<div><p></p><img src="https://via.placeholder.com/70"></div>
+						<span>Daydream</span>
+					</li>
+					<li>
+						<div><p></p><img src="https://via.placeholder.com/70"></div>
+						<span>Get Ready</span>
+					</li>
+					<li>
+						<div><p></p><img src="https://via.placeholder.com/70"></div>
+						<span>Chance</span>
+					</li>
+					<li>
+						<div><p></p><img src="https://via.placeholder.com/70"></div>
+						<span>Chance</span>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+
+	<script type="text/javascript">
+		function count(){
+			var list = $('.active').find('.listhead').siblings('li').length;
+			for (var i=0; i<list; i++) {
+				$('.active').find('.listhead').siblings('li').eq(i).find('p').text(i+1);
+			}
+		}
+		$(document).ready(function(){
+			count();
+
+			$('.genre>li>a').click(function(){
+				$(this).parent('li').addClass('active')
+				.end().parent('li').siblings().removeClass('active');
+				count();
+			});
+
+		});
+	</script>
+</body>
+</html>

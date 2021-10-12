@@ -1,0 +1,69 @@
+<!-- 주요 기능
+		목록의 내용이 길 경우 뒤에 말줄임표가 붙는다
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>말줄임표</title>
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		li {list-style: none;}
+		li a{
+			text-decoration: none;
+			color: #000;
+		}
+		.notice {
+			margin: 10px auto;
+			width: 300px;
+			height: auto;
+			border: 1px solid #999;
+			padding: 5px;
+		}
+		.notice p{
+			font-weight: bold;
+			font-size: 20px;
+			margin: 5px 10px;
+		}
+		.notice li{
+			overflow: hidden;
+
+		}
+		.notice li a:before{
+			content: "♦";
+			padding-right: 5px;
+		}
+		.notice li a {
+			display: block;
+			padding-left: 10px;
+			white-space: nowrap;
+			text-overflow : ellipsis;
+			overflow: hidden;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="notice">
+		<p>공지사항</p>
+		<ul>
+			<li><a href="#">공지사항이 길 경우 뒤에 말이 잘렸으면 좋겠어</a></li>
+			<li><a href="#">공지사항이 길 경우 뒤에 말이 잘렸으면 좋겠어</a></li>
+			<li><a href="#">공지사항이 길 경우 뒤에 말이 잘렸으면 좋겠어</a></li>
+			<li><a href="#">공지사항이 길 경우 뒤에 말이 잘렸으면 좋겠어</a></li>			
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+		})
+	</script>
+</body>
+</html>

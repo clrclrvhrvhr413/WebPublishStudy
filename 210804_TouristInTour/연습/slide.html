@@ -1,0 +1,120 @@
+<!-- 슬라이드 - 유한한 순서
+	화살표 버튼을 이용하여 세로/가로 방향의 슬라이드를 구현한다.
+	화살표 code : https://www.toptal.com/designers/htmlarrows/
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>이미지 슬라이드</title>
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+	<style type="text/css">
+		* {
+			margin: 0 auto;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+			font-size: 13px;
+		}
+		body {
+			width: 90%;
+		}
+		.slidebox {
+			width: 45%; box-sizing: border-box;
+			margin: 10px;
+			float: left;
+		}
+		.slide {
+			width: 100px;
+			height: 100px;
+			overflow: hidden;
+			position: relative;
+		}
+		.row {
+			width: 300px;
+			height: 100px;
+			position: absolute;
+		}
+		.col {
+			width: 100px;
+			height: 300px;
+			position: absolute;
+		}
+		.row img,.col img {
+			float: left;
+		}
+		.btn {
+			display: inline-block;
+			margin-top: 10px;
+		}
+		.btn li {
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 20px;
+			width: 40px; height: 20px;
+			cursor: pointer;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 가로 슬라이드 -->
+	<div class="slidebox">
+		<div class="slide">
+			<div class="row">
+				<img src="https://via.placeholder.com/100/ff0000" alt="그림1">
+				<img src="https://via.placeholder.com/100/00ff00" alt="그림2">
+				<img src="https://via.placeholder.com/100/0000ff" alt="그림3">
+			</div>
+		</div>
+		<ul class="btn">
+			<li class="prev">&#8592;</li>
+			<li class="next">&#8594;</li>
+		</ul>
+	</div>
+
+
+
+
+	<!-- 세로 슬라이드 -->
+	<div class="slidebox">
+		<div class="slide">
+			<div class="col">
+				<img src="https://via.placeholder.com/100/ff0000" alt="그림1">
+				<img src="https://via.placeholder.com/100/00ff00" alt="그림2">
+				<img src="https://via.placeholder.com/100/0000ff" alt="그림3">
+			</div>
+		</div>
+		<ul class="btn">
+			<li class="prev">&#8593;</li>
+			<li class="next">&#8595;</li>
+		</ul>
+	</div>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var imgbox, move;
+
+			$('.btn li').click(function(){
+				imgbox = $(this).parent().siblings('.slide').find('div');
+
+				if ($(this).attr('class')==='prev') {move='100';}
+				else {move='-100';}
+
+				imgbox.attr('class')=='row'?
+					imgbox.animate({left:`+=${move}`})
+					:imgbox.animate({top:`+=${move}`});
+
+				if($('.slide div').css('left')=='-100px'){
+					console.log('last')
+				}
+			console.log($('.slide div').css('left'))
+			});
+
+		});
+	</script>
+</body>
+</html>
