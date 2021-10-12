@@ -1,0 +1,74 @@
+<!-- 
+	배경 4장 사이즈 상관없 bg_.jpg
+	배경 하나당 구름 2개, 1146*543 cloud1.png, 1841*455 cloud2.png
+	스마트폰 이미지 4
+	morning afternoon evening night
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>서울</title>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+	<script src="js/custom.js"></script>
+</head>
+<body>
+	<!-- 배경 이미지 -->
+	<div id="wrap" class="morning">
+		<!-- 구름 animation -->
+		<img src="img/cloud1.png" alt="구름1">
+		<img src="img/cloud4.png" alt="구름2">
+
+		<!-- 로고 -->
+		<h1></h1>
+
+		<!-- 메뉴 -->
+		<ul id="gnb">
+			<li><a href="#">ABOUT</a></li>
+			<li><a href="#">COMPANY</a></li>
+			<li><a href="#">HISTORY</a></li>
+			<li><a href="#">COMMUNITY</a></li>
+			<li><a href="#">CONTACT US</a></li>
+		</ul>
+
+		<!-- 웹 아이콘 fontawesome-->
+		<ul id="sns">
+			<li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+			<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+			<li><a href="#"><i class="fas fa-envelope"></i></a></li>
+		</ul>
+
+		<!-- 슬로건 -->
+		<article>
+			<p><strong>서울 당일치기</strong>여행</p>
+			<em>대중교통 및 셔틀버스를 이용하여 당일여행 즐기는 방법</em>
+		</article>
+
+		<!-- 스마트폰 이미지 -->
+		<figure>
+			<p>
+				<!-- 시간  시 : 분 : 초 -->
+				<span>00</span> : <span>00</span> : <span>00</span>
+				<!-- 구름 animation-->
+				<img class="cl1" src="img/cloud1.png" alt="구름1">
+				<img class="cl2" src="img/cloud2.png" alt="구름2">
+			</p>
+		</figure>
+
+		<!-- 테마 버튼: 아침,점심,저녁,밤 -->
+		<nav>
+			<ul>
+				<li class="on"><a href="#">morning</a></li>
+				<li><a href="#">afternoon</a></li>
+				<li><a href="#">evening</a></li>
+				<li><a href="#">night</a></li>
+			</ul>
+		</nav>
+	</div>
+</body>
+</html>
