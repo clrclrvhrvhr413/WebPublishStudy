@@ -1,0 +1,209 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+/*font-family: 'Poiret One', cursive;*/
+/*font-family: 'Gowun Dodum', sans-serif;*/
+
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: #555; outline: 0;}
+img{border: 0;}
+
+body {
+	width: 100%; min-width: 1400px;
+	font-family: 'Poiret One', cursive;
+	background: #AAB6E0;
+	/*background: #bbb;*/
+	/*height: 4000px;우측 스크롤 생성위한 인위적 설정, = section width*/
+}
+/*header*/
+	header h1 {
+		position: fixed;
+		right: 20px; top: 20px;
+		z-index: 5;
+		width: 150px; height: 95px;
+	}
+	header h1 img {
+		width: 100%;
+		/*box-shadow: 5px 5px 3px #888;*/
+	}
+	/*sns*/
+	ul#sns {
+		position: fixed;
+		left: 20px; bottom: 20px;
+		z-index: 5;
+	}
+	ul#sns li {
+		float: left;
+		margin-right: 25px;
+	}
+	ul#sns li a {
+		display: block;
+		font-weight: bold;
+		font-size: 25px;
+		color: #fff;
+		transition: all .5s;
+	}
+	ul#sns li:hover a {
+		transform: scale(1.5);
+	}
+	/*navi*/
+	ul#navi {
+		position: fixed;
+		left: 20px; top: 20px;
+	}
+	ul#navi li {
+		float: left;
+		margin-right: 25px;
+		font-weight: bold;
+		font-size: 16px;
+		color: #fff;
+		cursor: pointer;
+		letter-spacing: 1px;
+		transition: all .5s;
+	}
+	ul#navi li:hover {
+		/*color: #888;*/
+		color: #fec503;
+	}
+	ul#navi li.on {
+		/*color: #888;*/
+		color: #fec503;
+	}
+/*슬로건	*/
+	div p.txt {
+		position: fixed;
+		right: 20px; top: 50%;
+		margin-top: -15px;
+		z-index: 1;
+		font-size: 28px;
+		color: #888;
+		letter-spacing: 1px;
+		text-align: right;
+		opacity: .5;
+	}
+	div p.txt strong {color: #555;}
+/*section*/
+	section {
+		position: fixed;
+		left: 0; top: 50%;
+		margin-top: -200px;
+		height: 500px;
+		/*width: 4000px;*/
+		/*arricle(200px) * 20개*/
+		z-index: 3;
+	}
+	section article {
+		position: relative;
+		width: 180px; height: 400px;
+		overflow: hidden;
+		float: left;
+		margin: 10px;
+		background: #fff;
+		border-radius: 10px;
+		box-sizing: border-box;
+		box-shadow: 5px 5px 5px #888;
+	}
+	section article.on {
+		width: 780px; height: 500px;
+	}
+	section article h2 {
+		position: absolute;
+		top: 300px; right: 0;
+		z-index: 5;
+		width: 100%; height: 50px;
+		line-height: 3.5;
+		background: #111;
+		padding-left: 10px;
+		box-sizing: border-box;
+		opacity: .5;
+		transition: all .5s;
+	}
+	section article:hover h2{
+		opacity: 1;
+	}
+	section article.on h2 {
+		color: #fff;
+		top: 100px;
+		height: 100px;
+		background: #111;
+		opacity: 0.5;
+	}
+	section article.on h2 a{
+		font-size: 30px;
+	}
+	section article h2 a {
+		display: block;
+		color: #fff;
+		font-size: 14px;
+		font-weight: bold;
+		letter-spacing: 3px;
+		font-family: 'Gowun Dodum', sans-serif;
+	}
+	section article strong {
+		display: block;
+		width: 100%; height: 300px;
+		overflow: hidden;
+		opacity: .4;
+		transition: all .8s;
+	}
+	section article.on strong {opacity: 0;}
+	section article strong img {
+		height: 300px; width: auto;
+	}
+	section article p {
+		position: absolute;
+		right: 0; top: 0;
+		width: 100%; height: 0;
+		opacity: 0;
+		overflow: hidden;
+		transition: all .8s;
+	}
+	section article.on p {
+		height: 500px;
+		opacity: .9;
+	}
+	section article p img {
+		height: 300px; width: auto;
+		opacity: 0;
+		transition: all 1s;
+	}
+	section article.on p img {
+		height: 100%; width: auto;
+		opacity: 1;
+	}
+	section article em {
+		position: absolute;
+		bottom: 50px; right: -300px;
+		padding: 10px 20px;
+		box-sizing: border-box;
+		background: #000;
+		color: #fff;
+		opacity: .8;
+		transition: all .5s;
+	}
+	section article.on em {
+		right: 20px;
+	}
+	section article span {
+		position: absolute;
+		right: -300px; top: 110px;
+		z-index: 5;
+		font-size: 20px;
+		color: #fff;
+		cursor: pointer;
+	}
+	section article.on span {
+		right: 20px;
+	}
+
+/*footer*/
+	footer {
+		position: fixed;
+		right: 20px; bottom: 20px;
+		z-index: 5;
+	}
+	footer .copyright {
+		font-size: 14px;
+		letter-spacing: 2px;
+	}
