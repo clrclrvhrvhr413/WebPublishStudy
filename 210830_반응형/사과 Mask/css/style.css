@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+html {
+	height: 100%;
+	font-family: 'Fira Sans', 'Noto Sans KR', sans-serif;
+	font-size: 16px;
+}
+body {
+	height: 100%;
+	background: #111;
+	color: #fff;
+}
+
+.scene {
+	height: 100%;
+	position: relative;
+}
+.mask {
+	position: absolute;
+	left: 0; top: 0;
+	width: 100%; height: 100%;
+	overflow: hidden;
+}
+.mask img {
+	position: absolute;
+	left: 50%; top: 50%;
+	width: 1920px; height: 1280px;
+	/*width: 100%; height: 100%;*/
+	margin-top: -540px; margin-left: -960px;
+}
+.mask .bar {
+	position: absolute;
+	bottom: 0;
+	width: 100%; height: 40px;
+}
+.mask#apple-1 .bar{background: #b51627;}
+.mask#apple-2 .bar{background: #003ef4;}
+.mask#apple-3 .bar{background: #b100f8;}
+.mask#apple-4 .bar{background: #00be30;}
+
+.mask .line {
+	position: absolute;
+	top: 0;
+	width: 1px; height: 100%;
+	background: #fff;
+	opacity: .8;
+}
+.mask#apple-1 .line {
+	display: none;
+}
