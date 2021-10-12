@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+	<title>계산기 - js와 jquery차이</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<form name="cal">
+		<table>
+			<caption>계산기</caption>
+			<tr>
+				<th colspan="4"><input type="text" name="result" value="0"></th>
+			</tr>
+			<tr>
+				<td><input type="button" name="" value="7"></td>
+				<td><input type="button" name="" value="8"></td>
+				<td><input type="button" name="" value="9"></td>
+				<td><input type="button" name="" value="+"></td>
+			</tr>
+			<tr>
+				<td><input type="button" name="" value="4"></td>
+				<td><input type="button" name="" value="5"></td>
+				<td><input type="button" name="" value="6"></td>
+				<td><input type="button" name="" value="-"></td>
+			</tr>
+			<tr>
+				<td><input type="button" name="" value="1"></td>
+				<td><input type="button" name="" value="2"></td>
+				<td><input type="button" name="" value="3"></td>
+				<td><input type="button" name="" value="*"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" name="" value="0"></td>
+				<td><input type="button" name="" value="%"></td>
+				<td><input type="button" name="" value="/"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" class="clr_btn" name="" value="clear"></td>
+				<td colspan="2"><input type="button" class="result_btn" name="" value="="></td>
+			</tr>
+		</table>
+	</form>
+
+	<!-- <script type="text/javascript" src="script.js"></script> -->
+	<script>
+		var $inp = $('form[name=cal]');
+		var $input = $inp.find('input');
+		var $clr_btn = $('.clr_btn');
+		var $result_btn = $('.result_btn');
+		var $result = $inp.find('input[name=result]');
+
+		function clr(){
+			$result.val(0);
+		}
+		function calc(value){
+			if ($result.val()==0 || $result.val()=='ERROR'){
+				$result.val('');
+			}
+			$result.val($result.val()+value);
+		}
+		function my_result(){
+			var calc = eval($result.val());
+			$result.val(calc);
+		}
+
+		$('input').click(function(){
+			var $input_value = $(this).val();
+			if ($input_value != '=' && $input_value != 'clear') {
+				calc($input_value);
+			}
+		})
+
+		$clr_btn.click(function(){
+			clr();
+		})
+		$result_btn.click(function(){
+			try{
+				my_result();
+			}
+			catch(err){
+				$result.val('ERROR')
+			}
+		})
+	</script>
+</body>
+</html>
