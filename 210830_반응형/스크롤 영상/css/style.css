@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+html {
+	height: 100%;
+	font-family: 'Fira Sans', 'Noto Sans KR', sans-serif;
+	font-size: 16px;
+}
+body{
+	height: 100%;
+	background: #111; color: #fff;
+	overflow: hidden;
+}
+.scene{
+	height: 100%;
+	position: relative;
+}
+
+
+.section{
+	height: 100%;
+}
+.section img{
+	display: none;
+	position: absolute;
+	width: 100%; height: 100%;
+}
+.section img:first-child{
+	display: inline-block;
+}
+
+.instruction {
+	position: absolute;
+	top: 50%; left: 0;
+	margin-top: -30px; width: 100%; text-align: center;
+}
+.instruction .text {
+	display: block;
+	margin-top: 16px;
+	font-size: 14px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
