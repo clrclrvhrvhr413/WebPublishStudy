@@ -1,0 +1,31 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+
+#calendar_wrap {
+	margin: 5px auto;
+	background: #333;
+	width: 350px;
+	text-align: center;
+}
+caption {
+	font-size: 20px;
+	color: orange;
+	padding: 10px;
+}
+table {
+	color: #fff;
+	border-collapse: collapse;
+	border-color: #666;
+}
+th,td {
+	width: 30px;
+	padding: 10px;
+}
+th:first-child,
+td:first-child{color: red;}
+#prev,#next {
+	display: inline-block;
+	padding: 5px;
+	text-decoration: none;
+	color: #fff;
+}
