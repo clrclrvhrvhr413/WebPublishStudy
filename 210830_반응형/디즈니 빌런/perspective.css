@@ -1,0 +1,56 @@
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+/*font-family: 'Bad Script', cursive;*/
+
+* {margin: 0; padding: 0;}
+ul {list-style: none;}
+img {border: 0;}
+
+body {
+	width: 100%; height: 23000px;
+	font-family: 'Bad Script', cursive;
+	font-size: 12px;
+}
+/*수치*/
+	h1 {
+		position: fixed;
+		top: 40px; left: 70px;
+		z-index: 2;
+		font-size: 100px;
+	}
+/*네비*/
+	.scrollNavi {
+		position: fixed;
+		top: 300px; left: 100px;
+		z-index: 2;
+	}
+	.scrollNavi li {margin-bottom: 20px; cursor: pointer;}
+	.scrollNavi li.on {color: skyblue;}
+/* 박스 영역 */
+	section {
+		position: fixed;
+		width: 1200px; height: 700px;
+		left: 50%; top: 50%;
+		margin-left: -600px; margin-top: -350px;
+		border: 1px solid red;
+		/*원근감을 부모(body)의 height만큼, translateZ를 사용하려면 이게 있어야 해*/
+		perspective: 23000px;
+	}
+	section>article {
+		position: absolute;
+		width: 1200px; height: 700px;
+		left: 0; top: 0;
+		background: blue;
+		color: #fff;
+		opacity: .3;
+		z-index: 1;
+		font-size: 100px;
+		text-align: center;
+		line-height: 700px;
+	}
+	section>article.on {z-index: 2; opacity: .7;}
+	section>article:nth-child(1){transform: translateZ(0px);} 
+	section>article:nth-child(2){transform: translateZ(-5000px);}
+	section>article:nth-child(3){transform: translateZ(-10000px);}
+	section>article:nth-child(4){transform: translateZ(-15000px);}
+	section>article:nth-child(5){transform: translateZ(-20000px);}

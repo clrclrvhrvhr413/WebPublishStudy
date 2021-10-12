@@ -1,0 +1,168 @@
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+/*font-family: 'Bad Script', cursive;*/
+
+* {margin: 0; padding: 0;}
+ul {list-style: none;}
+img {border: 0;}
+
+body {
+	width: 100%; height: 23000px;
+	font-family: 'Bad Script', cursive;
+	font-size: 12px;
+}
+	.bg {
+		width: 100%; height: 100%;
+		position: fixed; top: 0; left: 0;
+		background: url('img/bg.jpg') no-repeat center top;
+		background-size: cover;
+	}
+/*수치*/
+	h1 {
+		position: fixed;
+		top: 40px; left: 70px;
+		z-index: 2;
+		font-size: 100px;
+	}
+/*네비*/
+	.scrollNavi {
+		position: fixed;
+		top: 300px; left: 100px;
+		z-index: 2;
+	}
+	.scrollNavi li {
+		margin-bottom: 20px;
+		cursor: pointer;
+		width: 170px; height: 35px;
+		font-size: 20px; font-weight: bold; color: #fff;
+		line-height: 35px;
+		text-shadow: 1px 1px 1px #000;
+		/*box-shadow: 1px 1px 1px #000;*/
+		text-align: center;
+		transform: skewX(-30deg);
+	}
+	/*.scrollNavi li:nth-child(1).on{background: darkred;}
+	.scrollNavi li:nth-child(2).on{background: yellowgreen;}
+	.scrollNavi li:nth-child(3).on{background: green;}
+	.scrollNavi li:nth-child(4).on{background: blue;}
+	.scrollNavi li:nth-child(5).on{background: purple;}*/
+	.scrollNavi li span {
+		display: inline-block;
+		width: 10px; height: inherit;
+		position: absolute; left: 0;
+		box-shadow: 1px 1px 1px #000;
+		transition: all .5s;
+		z-index: -1;
+	}
+	.scrollNavi li:nth-child(1) span{background: darkred;}
+	.scrollNavi li:nth-child(2) span{background: yellowgreen;}
+	.scrollNavi li:nth-child(3) span{background: green;}
+	.scrollNavi li:nth-child(4) span{background: blue;}
+	.scrollNavi li:nth-child(5) span{background: purple;}
+	.scrollNavi li.on span {width: inherit;}
+/*메뉴*/
+	.gnb {
+		position: fixed;
+		top: 10px; right: 200px;
+		z-index: 10;
+	}
+	.gnb li {
+		float: left;
+	}
+	.gnb li a {
+		display: block;
+		font-size: 20px;
+		padding: 5px; margin-left: 30px;
+		color: #fff;
+		text-decoration: none;
+		text-align: center;
+	}
+/*sns*/
+	.sns {
+		position: fixed;
+		top: 10px; right: 10px;
+		z-index: 10;
+	}
+	.sns li {
+		color: #fff;
+		float: left;
+		font-size: 20px;
+		padding: 5px; margin-left: 10px;
+	}
+/* 박스 영역 */
+	section {
+		position: fixed;
+		width: 1200px; height: 700px;
+		left: 50%; top: 50%;
+		margin-left: -600px; margin-top: -350px;
+		/*border: 1px solid red;*/
+		/*원근감을 부모(body)의 height만큼, translateZ를 사용하려면 이게 있어야 해*/
+		/*perspective: 23000px; 수치가 작을수록 더 멀어짐*/
+		perspective: 2300px;
+	}
+	section>article {
+		position: absolute;
+		width: 1200px; height: 700px;
+		left: 0; top: 0;
+		/*background: blue;*/
+		color: #fff;
+		opacity: .5;
+		z-index: 1;
+		/*text-align: center;*/
+		/*line-height: 700px;*/
+	}
+	section>article.on {z-index: 2; opacity: 1;}
+	section>article:nth-child(1){transform: translateZ(0px);} 
+	section>article:nth-child(2){transform: translateZ(-5000px);}
+	section>article:nth-child(3){transform: translateZ(-10000px);}
+	section>article:nth-child(4){transform: translateZ(-15000px);}
+	section>article:nth-child(5){transform: translateZ(-20000px);}
+
+	section>article>img {position: absolute;}
+	section>article>img.obj10 {top: -250px; right: -150px; width: 100%;}
+	section>article>img.obj11 {top: -150px; left: 670px;}
+	section>article>img.obj12 {top: 200px; right: -200px; height: 120%;}
+	section>article>img.obj13 {bottom: -100px; left: -200px;height: 130%;}
+	section>article:nth-child(1)>p {bottom: 100px; right: -100px;}
+	section>article:nth-child(1)>p>span {color: red;font-weight: bold;}
+
+	section>article>img.obj20 {bottom: -100px; right: -300px; width: 130%;}
+	section>article>img.obj21 {bottom: -100px; right: 610px; height: 110%;}
+	section>article>img.obj22 {bottom: -150px; right: -50px; height: 130%;}
+	section>article:nth-child(2)>p {bottom: 100px; right: 200px;}
+	section>article:nth-child(2)>p>span {color: yellow;font-weight: bold;}
+
+	section>article>img.obj31 {bottom: 40px; right: -50px; width: 50%;}
+	section>article>img.obj32 {bottom: -130px; left: 100px; height: 130%;}
+	section>article:nth-child(3)>p {bottom: 300px; right: -100px;}
+	section>article:nth-child(3)>p>span {color: limegreen;font-weight: bold;}
+
+	section>article>img.obj41 {top: -300px; right: 100px; width: 130%;}
+	section>article>img.obj42 {bottom: -440px; left: 0px; width: 130%;}
+	section>article>img.obj43 {bottom: -140px; right: -300px; height: 130%;}
+	section>article:nth-child(4)>p {bottom: 200px; left: 250px;}
+	section>article:nth-child(4)>p>span {color: lightblue;font-weight: bold;}
+
+	section>article>img.obj50 {top: -300px; left: -200px; height: 140%;}
+	section>article>img.obj51 {bottom: -130px; left: -100px; height: 140%;}
+	section>article>img.obj52 {top: 430px; right: 430px; height: 30%;}
+	section>article>img.obj53 {bottom: -130px; left: 800px; height: 120%;}
+	section>article:nth-child(5)>p {top: 250px; left: 650px;}
+	section>article:nth-child(5)>p>span {color: pink;font-weight: bold;}
+
+	section>article>p {
+		position: absolute;
+		bottom: 100px; right: -100px;
+		width: 450px;
+		padding: 30px 60px;
+		color: #fff;
+		opacity: 1;
+	}
+	section>article>p>span {
+		font-size: 40px;
+	}
+	section>article>p>em {
+		font-size: 30px;
+		line-height: 1.5;
+		display: block;
+	}
