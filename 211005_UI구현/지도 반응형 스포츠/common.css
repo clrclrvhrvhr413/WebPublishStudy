@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+/*font-family: 'Bangers', 'Agency FB', cursive;*/
+
+html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,img,
+section, aside, article, header, footer, form, fieldset,
+legend,ul {margin: 0; padding: 0;border: 0; outline: 0;
+font-size: 100%; vertical-align: baseline; background: transparent;}
+
+
+body {
+	font-family: 'Bangers', 'Agency FB', cursive;
+	line-height: 1;
+}
+article,aside,figcaption,footer,header,nav,section{display: block;}
+li {list-style: none;}
+a{
+	margin: 0;padding: 0;font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
+}
+img {vertical-align: top;}
+hr {
+	display: block;
+	line-height: 2px;
+	border: 0;
+	margin: 0; padding: 0;
+}
+input,textarea {
+	width: 100%;
+	margin: 0; padding: 0;
+	border: 0; border-bottom: 1px solid #757575;
+	color: #3f51b5;
+	font-size: 12px;
+	font-family: 'Agency FB', sans-serif;
+	vertical-align: 12px; vertical-align: top;
+	border-radius: 0;
+	box-sizing: content-box;
+}
+
