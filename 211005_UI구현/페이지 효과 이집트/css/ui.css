@@ -202,7 +202,9 @@ html,body {
 		font-weight: 700;
 		color: #ed3140;
 	}
-	#container .content.this:after {font-size: 0;}
+	#container .content.this:after {left: -500%; opacity: 0; transition: all 1s;}
+	#container .content.prev:after,
+	#container .content.next:after {opacity: 0; transition: all 1.6s;}
 	/*menu*/
 	#container #menu1 {background: url('../img/content_bg4.png') repeat 0; left: 0%;}
 	#container #menu2 {background: url('../img/content_bg3.png') repeat 25%; left: 25%;}
@@ -219,7 +221,7 @@ html,body {
 	#container #menu3:after {content: "CAT";}
 	#container #menu4:after {content: "CAMMEL";}
 	/*h2*/
-	#container .content h2 {opacity: 0; transition: all .6s;transition-delay: 1.2s;}
+	#container .content h2 {opacity: 0;}
 	#container .content.this h2 {
 		opacity: 1;
 		color: #000;
@@ -227,6 +229,7 @@ html,body {
 		background: #fff;
 		padding: 30px 0 20px 50px;
 		position: relative;
+		transition: all 1s; transition-delay: 1.2s;
 	}
 	#container .content.this h2:after{
 		content: "";

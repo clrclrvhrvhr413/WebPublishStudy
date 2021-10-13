@@ -12,4 +12,9 @@ $(function(){
 		$(`#${id}`).addClass('this').prevAll().addClass('prev');
 		$(`#${id}`).addClass('this').nextAll().addClass('next');
 	});
+
+	$('.logo_box').click(function(){
+		$('nav li').removeClass('on');
+		$('.content').removeClass('prev this next');
+	});
 });
