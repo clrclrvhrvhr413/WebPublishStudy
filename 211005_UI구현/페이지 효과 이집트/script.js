@@ -16,5 +16,6 @@ $(function(){
 	$('.logo_box').click(function(){
 		$('nav li').removeClass('on');
 		$('.content').removeClass('prev this next');
+		$('#container').css('max-width','1200px');
 	});
 });

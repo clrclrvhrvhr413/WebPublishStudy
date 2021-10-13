@@ -166,6 +166,7 @@ html,body {
 		position: relative;
 		max-width: 1200px;
 		margin: 0 auto;
+		transition: max-width 1s;
 	}
 	/*content 공통*/
 	#container .content {
