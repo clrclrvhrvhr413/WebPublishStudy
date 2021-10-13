@@ -113,12 +113,6 @@ html,body {
 		padding-left: 15px;
 		position: relative;
 	}
-	#wrap header nav ul li a {
-		font-size: 16px;
-		color: #fff;
-		font-weight: 600;
-		line-height: 30px;
-	}
 	#wrap header nav ul li:after {
 		content: "";
 		display: block;
@@ -128,14 +122,16 @@ html,body {
 		position: absolute;
 		left: 0; top: 13px;
 	}
+	#wrap header nav ul li a {
+		font-size: 16px;
+		color: #fff;
+		font-weight: 600;
+		line-height: 30px;
+	}
 	#wrap header nav ul li:hover a,
-	#wrap header nav ul li.on a {
-		color: #ed3140;
-	}
+	#wrap header nav ul li.on a {color: #ed3140;}
 	#wrap header nav ul li:hover:after,
-	#wrap header nav ul li.on:after a {
-		background: #ed3140;
-	}
+	#wrap header nav ul li.on:after {background: #ed3140;}
 /*footer*/
 	footer {
 		width: 180px;
@@ -171,18 +167,20 @@ html,body {
 		max-width: 1200px;
 		margin: 0 auto;
 	}
-	#container h2 {text-indent: -999px;}
+	/*content 공통*/
 	#container .content {
 		width: 25%; height: 100%;
 		position: absolute;
+		top: -100%;
+		transition: all 1s;
 	}
-	#container #menu1 {background: url('../img/content_bg4.png') repeat 0; left: 0%;}
-	#container #menu2 {background: url('../img/content_bg3.png') repeat 25%; left: 25%;}
-	#container #menu3 {background: url('../img/content_bg2.png') repeat 50%; left: 50%;}
-	#container #menu4 {background: url('../img/content_bg1.png') repeat 75%; left: 75%;}
+	#container.start .content{top: 0;}
+
+	#container .content.this {width: 100% !important; left: 0 !important;}
+	#container .content.prev {left: -100% !important;}
+	#container .content.next {left: 100% !important;}
 
 	#container .content:before {
-		/*border-left: 1px solid burlywood;*/
 		content: "";
 		display: block;
 		height: 100%; width: 1px;
@@ -191,6 +189,10 @@ html,body {
 		background: #b08968;
 		z-index: 5;
 	}
+	#container .content.this:before,
+	#container .content.prev:before,
+	#container .content.next:before {width: 0;}
+
 	#container .content:after {
 		content: "";
 		display: block;
@@ -200,11 +202,41 @@ html,body {
 		font-weight: 700;
 		color: #ed3140;
 	}
+	#container .content.this:after {font-size: 0;}
+	/*menu*/
+	#container #menu1 {background: url('../img/content_bg4.png') repeat 0; left: 0%;}
+	#container #menu2 {background: url('../img/content_bg3.png') repeat 25%; left: 25%;}
+	#container #menu3 {background: url('../img/content_bg2.png') repeat 50%; left: 50%;}
+	#container #menu4 {background: url('../img/content_bg1.png') repeat 75%; left: 75%;}
+
+	#container #menu1{transition-delay: 0s;}
+	#container #menu2{transition-delay: .3s;}
+	#container #menu3{transition-delay: .6s;}
+	#container #menu4{transition-delay: .9s;}
+
 	#container #menu1:after {content: "ANUBIS";}
 	#container #menu2:after {content: "RA";}
 	#container #menu3:after {content: "CAT";}
 	#container #menu4:after {content: "CAMMEL";}
-	
+	/*h2*/
+	#container .content h2 {opacity: 0; transition: all .6s;transition-delay: 1.2s;}
+	#container .content.this h2 {
+		opacity: 1;
+		color: #000;
+		font-size: 28px;font-weight: 400;
+		background: #fff;
+		padding: 30px 0 20px 50px;
+		position: relative;
+	}
+	#container .content.this h2:after{
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;left: 0;
+		height: 8px; width: 100%;
+		background: #ed3140;
+	}
+	/*conbox*/
 	#container .conbox {
 		/*width: 230px;*/
 		/*height: 350px;*/
@@ -215,20 +247,14 @@ html,body {
 
 		background-size: 100%;
 		background-repeat: no-repeat;
+
+		transition: all 1s;
 	}
 	#container #menu1 .conbox {background-image: url('../img/ico01.png');}
 	#container #menu2 .conbox {background-image: url('../img/ico02.png');}
 	#container #menu3 .conbox {background-image: url('../img/ico03.png'); bottom: -50%; background-size: 50%;}
 	#container #menu4 .conbox {background-image: url('../img/ico04.png');bottom: -40%; right: -10%;}
 
-	#container .content{
-		top: -100%;
-		transition: all 1.5s;
-	}
-	#container #menu1{transition-delay: 0;}
-	#container #menu2{transition-delay: .5s;}
-	#container #menu3{transition-delay: 1s;}
-	#container #menu4{transition-delay: 1.5s;}
-	#container.start .content{
-		top: 0;
-	}
+	#container .content.this .conbox,
+	#container .content.prev .conbox,
+	#container .content.next .conbox {opacity: 0;}
