@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<script src="../../jquery/jquery-3.6.0.min.js"></script>
+	<!-- bxSlider plugin -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<title>카지노 반응형</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="#">목록1</a></li>
+			<li><a href="#">목록1</a></li>
+			<li><a href="#">목록1</a></li>
+			<li><a href="#">목록1</a></li>
+		</ul>
+		<!-- 모바일용 -->
+		<a href="#" id="trigger">MENU</a>
+	</nav>
+
+	<!-- 슬라이드 -->
+	<section>
+		<div id="wrapper">
+			<div class="banner">
+				<div class="bxslider">
+					<div><img src="img/img1.jpg" alt="그림"></div>
+					<div><img src="img/img2.jpg" alt="그림"></div>
+					<div><img src="img/img3.jpg" alt="그림"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 콘텐츠 -->
+	<section>
+		<div class="wrapper">
+			<header class="section-title">
+				<h3>Lorem Ipsum</h3>
+			</header>
+			<div class="intro">
+				<div class="text">
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				</div>
+				<div class="img">
+					<img src="img/dice.png" alt="주사위">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 명언 -->
+	<section>
+		<div class="wrapper">
+			<div class="about">
+				<div class="msg">
+					<p><img src="img/quot1.png" alt="따옴표"></p>
+					<p>겁날 것도, 억울할 것도 없다. 내가 아는 모든 사람이 그랬던 것처럼, 언젠가는 나도 다치거나 죽는다. 그게 타짜이니까...
+						<br><span>- 타짜,2006 -</span></p>
+					<p><img src="img/quot2.png" alt="따옴표"></p>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 게임 종류 -->
+	<section>
+		<div class="wrapper">
+			<header class="section-title">
+				<h3>게임 종류</h3>
+			</header>
+			<div class="program-list">
+				<div class="program">
+					<h4>게임1</h4>
+					<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+				</div>
+				<div class="program">
+					<h4>게임2</h4>
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+				</div>
+				<div class="program">
+					<h4>게임3</h4>
+					<p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+				</div>
+				<div class="program">
+					<h4>게임4</h4>
+					<p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 푸터 -->
+	<section class="footer">
+		<div class="wrapper">
+			<div class="footer-info">
+				<div class="content">
+					<p>주소 : 서울특별시 종로구 100 // 대표자 : 홍길동</p>
+					<p>사업자등록번호 : xxx-xx-xxxxx</p>
+					<p>전화번호 : xxxx-xxxx // 팩스번호 : xx-xxxx-xxxx</p>
+					<p>E-mail : game@casino.com</p>
+				</div>
+				<div class="sns">
+					<a href="#"><img src="img/sns1.png"></a>
+					<a href="#"><img src="img/sns2.png"></a>
+					<a href="#"><img src="img/sns3.png"></a>
+					<a href="#"><img src="img/sns4.png"></a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		$(function() {
+			var trigger = $('#trigger');
+			var menu = $('nav ul');
+			trigger.on('click',function(){
+				menu.slideToggle();
+			});
+
+			$('.bxslider').bxSlider({
+				auto:true,
+				autoHover:true
+			})
+		});
+	</script>
+</body>
+</html>
