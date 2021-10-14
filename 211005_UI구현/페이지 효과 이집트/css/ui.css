@@ -346,3 +346,41 @@ html,body {
 			text-align: justify;
 		}
 		.text_box:nth-last-child(1) h4 {color: #ed3140;}
+
+	/*menu2*/
+		#menu2.content h3 {font-size: 0;}
+		#menu2.content.this .conbox {
+			max-width: 100%;
+			/*background: url('../img/menu2/book_bg.png') no-repeat center 360px;*/
+			/*background-size: 120%;*/
+		}
+		.notebook {
+			width: 954px; height: 650px;
+			margin: 100px auto;
+			background: url('../img/menu2/macbook.png') no-repeat;
+			background-size: 954px;
+		}
+		.detail_content {
+			/*width: 719px; height: 453px;*/
+			width: 779px; height: 540px;
+			padding: 30px 0;
+			/*background: pink;*/
+			position: absolute;
+			top: 303px; left: 185px;
+		}
+		.img_book {
+			width: 384px;
+			float: left;
+		}
+		.img_book img {
+			/*width: 100%;*/
+			/*임의 수정*/
+			width: 90%;
+			display: block;
+			margin: auto;
+		}
+		.book_desc {
+			float: left;
+			width: 393px;
+			padding: 20px 20px 20px 40px;
+		}
