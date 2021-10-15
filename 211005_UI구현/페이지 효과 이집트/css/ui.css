@@ -264,6 +264,11 @@ html,body {
 	#container #menu3 .conbox:before {background-image: url('../img/ico03.png'); bottom: -50%; background-size: 50%;}
 	#container #menu4 .conbox:before {background-image: url('../img/ico04.png');bottom: -40%; right: -45%;width: 140%;}
 
+	#container .content.this .conbox {
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
 	#container .content.this .conbox:before,
 	#container .content.prev .conbox:before,
 	#container .content.next .conbox:before {opacity: 0;}
@@ -477,4 +482,87 @@ html,body {
 		.book_rollwrap .book_roll ul li img {
 			max-width: 215px;
 			height: 150px;
+		}
+	/*menu3*/
+		.tit_faq {
+			color: #fff;
+			position: relative;
+		}
+		.tit_faq strong {
+			font-size: 25px;
+			padding-right: 10px;
+			display: block;
+		}
+		.tit_faq span {
+			font-size: 14px;
+			font-weight: 400;
+		}
+		.tit_faq:before {
+			content: ""; display: block;
+			width: 550px; height: 238px;
+			background: url('../img/menu3/parao_history.png') no-repeat;
+			background-size: cover;
+			position: absolute;
+			right: 0; top: -30px;
+		}
+		.accordio_box {
+			background: pink;
+			margin-top: 140px;
+			/*클릭하기 위해 상위로*/
+			position: relative;
+			z-index: 100;
+		}
+		.accordio_box ol li {
+			/*width: 100%;*/
+			background: #fff;
+			border-top: 4px solid #ea657b;
+		}
+		.accordio_box ol li h4 {
+			padding: 0 20px 20px 0;
+			margin: 20px 20px 0 30px;
+			cursor: pointer;
+			background: url('../img/menu3/bullet_up.png') no-repeat right 0;
+			background-size: 20px;
+			font-weight: 400;
+			color: #3c4147;
+		}
+		.accordio_box ol li.on h4 {
+			background: url('../img/menu3/bullet_down.png') no-repeat right 0;
+			background-size: 20px;
+		}
+		.accordio_box ol li h4 span {
+			font-weight: 900;
+			display: inline-block;
+			margin-right: 10px;
+		}
+		.accordio_box ol li p {
+			height: 0;
+			visibility: hidden;
+			opacity: 0;
+		}
+		.accordio_box ol li.on p {
+			height: auto;
+			visibility: visible;
+			opacity: 1;
+			padding: 10px 100px 70px 260px;
+			background-color: #eee;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: 40px 0;
+		}
+		.accordio_box ol li:nth-of-type(1) p {
+			background-image: url('../img/menu3/parao1.png');
+		}
+		.accordio_box ol li:nth-of-type(2) p {
+			background-image: url('../img/menu3/parao2.png');
+		}
+		.accordio_box ol li:nth-of-type(3) p {
+			background-image: url('../img/menu3/parao3.png');
+		}
+		.accordio_box ol li:nth-of-type(4) p {
+			background-image: url('../img/menu3/parao4.png');}
+		.accordio_box ol li p a {
+			display: block;
+			margin-bottom: 20px;
+			font-size: 20px;
 		}

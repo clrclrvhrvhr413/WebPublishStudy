@@ -28,4 +28,10 @@ $(function(){
 	$('.roll_right').click(function(){
 		$('.book_roll li').eq(-1).insertBefore('.book_roll li:first-child');
 	});
+
+	// menu3 accordio_box
+	$('.accordio_box ol li').click(function(){
+		$(this).siblings('li').removeClass('on');
+		$(this).toggleClass('on');
+	});
 });
