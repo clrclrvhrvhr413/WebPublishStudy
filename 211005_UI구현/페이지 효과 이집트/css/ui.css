@@ -267,6 +267,7 @@ html,body {
 	#container .content.this .conbox:before,
 	#container .content.prev .conbox:before,
 	#container .content.next .conbox:before {opacity: 0;}
+	/*스크롤의 이유*/
 
 	#container .conbox:before {
 		content: "";
@@ -351,12 +352,12 @@ html,body {
 		#menu2.content h3 {font-size: 0;}
 		#menu2.content.this .conbox {
 			max-width: 100%;
-			/*background: url('../img/menu2/book_bg.png') no-repeat center 360px;*/
+			/*background: url('../img/menu2/book_bg.png') no-repeat center 530px;*/
 			/*background-size: 120%;*/
 		}
 		.notebook {
 			width: 954px; height: 650px;
-			margin: 100px auto;
+			margin: 20px auto 100px;
 			background: url('../img/menu2/macbook.png') no-repeat;
 			background-size: 954px; background-position: -40px 0;
 			position: relative;
@@ -439,4 +440,41 @@ html,body {
 		.commbtn.pink {
 			background: #f92d68;
 			color: #fff;
+		}
+		.book_rollwrap {
+			width: 100%; height: 150px;
+			margin: 40px auto 0;
+			padding: 0 20px;
+			position: relative;
+		}
+		.book_rollwrap>button {
+			display: block;
+			width: 20px;
+			height: 50px;
+			position: absolute; top: 50px;
+		}
+		.book_rollwrap>button.roll_left {
+			background: url('../img/menu2/roll_left.png') no-repeat;
+			background-size: 20px;
+			left: 0;
+		}
+		.book_rollwrap>button.roll_right {
+			background: url('../img/menu2/roll_right.png') no-repeat;
+			background-size: 20px;
+			right: 0;
+		}
+		.book_rollwrap .book_roll {
+			overflow: hidden;
+		}
+		.book_rollwrap .book_roll ul{
+			width: 1000%;
+		}
+		.book_rollwrap .book_roll ul li {
+			float: left;
+			width: 215px;
+			text-align: center;
+		}
+		.book_rollwrap .book_roll ul li img {
+			max-width: 215px;
+			height: 150px;
 		}
