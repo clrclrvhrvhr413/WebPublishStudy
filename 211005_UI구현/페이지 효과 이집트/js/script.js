@@ -34,4 +34,9 @@ $(function(){
 		$(this).siblings('li').removeClass('on');
 		$(this).toggleClass('on');
 	});
+
+	// menu4 modal
+	$('.thankyou_message .btn_box').click(function(){
+		$('.thankyou_message').css('display','none');
+	});
 });
