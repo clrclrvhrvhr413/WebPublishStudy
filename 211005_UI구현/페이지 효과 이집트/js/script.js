@@ -22,11 +22,32 @@ $(function(){
 	});
 
 	// menu2 slide
-	$('.roll_left').click(function(){
+	function resetL(){
 		$('.book_roll li').eq(0).insertAfter('.book_roll li:last-child');
+		$('.book_roll li').css({'margin-left':'0px'});
+	}
+	function resetR(){
+		$('.book_roll li').eq(0).css({'margin-left':'0px'});
+	}
+	$('.roll_left').click(function(){
+		$('.book_roll li').eq(0).css({
+			'margin-left':'-215px',
+			'transition':'all .5s'
+		});
+		setTimeout(function(){
+			resetL();
+		},500);
 	});
 	$('.roll_right').click(function(){
 		$('.book_roll li').eq(-1).insertBefore('.book_roll li:first-child');
+
+		$('.book_roll li').eq(0).css({
+			'margin-left':'-215px',
+			'transition':'all .5s'
+		});
+		setTimeout(function(){
+			resetR();
+		},0);
 	});
 
 	// menu3 accordio_box
