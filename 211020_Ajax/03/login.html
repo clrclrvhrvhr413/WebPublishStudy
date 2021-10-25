@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<title>json</title>
+</head>
+<body>
+	<div class="login_wrap">
+		<h1>로그인</h1>
+		<form action="member_login_ok.php" method="post" class="login_f">
+			<p>
+				<label for="user_id">아이디</label>
+				<input type="text" name="user_id" id="user_id" value="korean">
+			</p>
+			<p>
+				<label for="user_pw">비밀번호</label>
+				<input type="password" name="user_pw" id="user_pw" value="1234">
+			</p>
+			<p>
+				<input type="submit" name="" value="로그인" class="login_btn">
+			</p>
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		$(function() {
+			var $frm = $('.login_f');
+			$frm.on('submit',function(e){
+				e.prevenDefault();
+				var myData = $frm.serialize();
+
+				$.ajax({
+					type:'POST',
+					url:$frm.attr('action'),
+					data:myData,
+					success:function(res){
+						if (res) {
+							var jsonData = JSON.parse(res);
+							var message = `${jsonData.uwer_name}(${jsonData.user_id})님 반갑습니다.`;
+							$('.login_wrap').html(message);
+						}
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>
