@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<title>json</title>
+</head>
+<body>
+	<div class="wrap"></div>
+
+	<script type="text/javascript">
+		$(function() {
+			$.ajax({
+				url:'../json/MOCK_DATA.json',
+				dataType:'json',
+				success:function(data){
+					if (data.length>0) {
+						var tb = $('<table />');
+						for(var i in data){
+							var $id = data[i].id,
+								$first_name = data[i].first_name,
+								$last_name = data[i].last_name,
+								$email = data[i].email,
+								$gender = data[i].gender;
+							var row = $('<tr/>').append(
+								$('<td/>').text($id),
+								$('<td/>').text($first_name),
+								$('<td/>').text($last_name),
+								$('<td/>').text($email),
+								$('<td/>').text($gender)
+								);
+							tb.append(row);
+						}
+						$('.wrap').append(tb);
+					}
+				}
+			});
+		});
+	</script>
+</body>
+</html>
