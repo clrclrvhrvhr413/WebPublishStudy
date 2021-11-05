@@ -51,7 +51,7 @@
 			resize: none;
 		}
 		.sticky .side_nav {
-			position: absolute; left: 0; top: 0;
+			position: absolute; left: -70%; top: 0;
 			width: 70%; height: 100%;
 			background: rgba(0, 0, 0, .6); color: #fff;
 			box-sizing: border-box;
@@ -72,7 +72,7 @@
 </head>
 <body>
 	<div id="sticky_wrap">
-		<div class="sticky">
+		<!-- <div class="sticky">
 			<nav class="top_nav">
 				<a href="#" class="add"><i class="fas fa-plus"></i></a>
 				<a href="#" class="save"><i class="far fa-save"></i></a>
@@ -83,15 +83,42 @@
 			</nav>
 			<textarea name="txt" class="txt"></textarea>
 			<nav class="side_nav">
-				<ol>
-					<li>test<i class="fas fa-trash-alt"></i></li>
-				</ol>
+				<ol></ol>
 			</nav>
-		</div>
+		</div> -->
 	</div>
 
 	<script>
-		
+		$(function(){
+			var sticky_html = '<div class="sticky"><nav class="top_nav"><a href="#" class="add"><i class="fas fa-plus"></i></a><a href="#" class="save"><i class="far fa-save"></i></a><div class="right"><a href="#" class="get"><i class="fas fa-list-ul"></i></a><a href="#" class="del"><i class="fas fa-trash-alt"></i></a></div></nav><textarea name="txt" class="txt"></textarea><nav class="side_nav"><ol></ol></nav></div>';
+
+			// 메모 객체
+			var Sticky = {
+				add : function(){},
+				save : function(current_memo){
+					var idx = localStorage.length;
+					var txt = current_memo.val();
+
+					if (txt!=='') {
+						var key = prompt('저장할 파일명?','');
+						localStorage.setItem(key,txt);	//메모장 이름:내용
+					}
+				},
+				get : function(){}
+			};
+
+			$('.add')
+			$('#sticky_wrap').on('click','.save',function(){
+				var current_memo = $(this).parent().siblings('.txt');
+				Sticky.save(current_memo);
+			})
+			$('.get')
+			$('.del')
+
+
+
+			$('#sticky_wrap').append(sticky_html);
+		})
 
 	</script>
 </body>
