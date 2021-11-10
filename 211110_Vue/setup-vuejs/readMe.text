@@ -1,0 +1,6 @@
+atom 설치            https://atom.io/
+node.js LTS 설치     https://nodejs.org/en/
+html - vue cdn 추가
+chrome - 확장 프로그램 Vue 설치, Vue:[파일URL에 대한 액세스 허용] 켜기
+  https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
+html 실행 후 vue 연결 확인하기
