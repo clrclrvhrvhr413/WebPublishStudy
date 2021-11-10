@@ -165,6 +165,25 @@
 			});
 
 
+			$('#sticky_wrap').on('touchstart mousedown','.sticky',function(){
+				$(this).css('zIndex',0);
+				$(this).css('zIndex',99);
+
+			})
+			$('#sticky_wrap').on('touchmove','.top_nav',function(e){
+				var $sticky = $(this).parent();
+				var event = e.originalEvent;
+
+				var touchobj = event.changedTouches[0];
+				var x = parseInt(touchobj.clientX);
+				var y = parseInt(touchobj.clientY);
+				ex=x-125; ey=y-16;
+
+				$sticky.css('left',`${ex}px`);
+				$sticky.css('top',`${ey}px`);
+			})
+
+
 			$('#sticky_wrap').append(sticky_html);
 		})
 
