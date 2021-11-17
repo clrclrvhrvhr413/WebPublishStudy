@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Vue.js 애완용품샵</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="navbar navbar-default">
+          <div class="navbar-header">
+            <!-- check -->
+            <h1>{{ sitename }}</h1>
+            <!-- <h1 v-text="sitename"></h1> -->
+          </div>
+          <!-- 2021.11.16 -->
+          <div class="nav navbar-nav navbar-right cart">
+            <button v-on:click='showCheckout' type="button" class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-shopping-cart">
+                {{ cartItemCount }}
+              </span>
+              <span>체크아웃</span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <main>
+        <!-- check -->
+        <div class="row product">
+        <!-- <div class="row"> -->
+        <!-- check -->
+        <div v-if='showProdect'>
+          <div class="col-md-2 col-md-offset-1">
+            <figure>
+              <img v-bind:src="product.image">
+            </figure>
+          </div>
+          <div class="col-md-6 col-md-offset-2 description">
+            <h1 v-text='product.title'></h1>
+            <p v-html='product.description'></p>
+            <p class='price'>
+              {{ product.price | formatPrice }}
+            </p>
+            <!-- <p v-text='product.price' class='price'></p> -->
+            <button v-on:click='addToCart' v-show='canAddToCart' v-if='canAddToCart' class="btn btn-primary btn-lg">
+              장바구니 담기
+            </button>
+                    <!-- check -->
+            <button disabled='true' v-else class="btn btn-primary btn=lg">
+              장바구니 담기
+            </button>
+          </div>
+        </div>
+        <div v-else>
+          <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-info">
+              <div class="panel-heading">애완용품샵 체크아웃</div>
+              <div class="panel-body">
+                <!-- 정보를 입력하세요 -->
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <h4><strong>정보를 입력하세요.</strong></h4>
+                  </div>
+                </div>
+
+                <!-- 이름,성 -->
+                <div class="form-group">
+                  <div class="col-md-6">
+                    <strong>이름 : </strong>
+                    <input v-model.trim='order.firstName' class="form-control">
+                  </div>
+                  <div class="col-md-6">
+                    <strong>성 : </strong>
+                    <input v-model.trim='order.lastName' class="form-control">
+                  </div>
+                </div>
+
+                <!-- 주소 -->
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <strong>주소 : </strong>
+                  </div>
+                  <div class="col-md-12">
+                    <input v-model.trim='order.address' class="form-control">
+                  </div>
+                </div>
+
+                <!-- 도시 -->
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <strong>도시 : </strong>
+                  </div>
+                  <div class="col-md-12">
+                    <input v-model.trim='order.city' class="form-control">
+                  </div>
+                </div>
+
+                <!-- 주 -->
+                <div class="form-group">
+                  <div class="col-md-2">
+                    <strong>주 : </strong>
+                    <!-- chekc -->
+                    <select v-model='order.state' class="form-control">
+                      <option disabled value="">주</option>
+                      <!-- check -->
+                      <option v-for='(state, key) in states' v-bind:value='state'>
+                        {{ key }}
+                      </option>
+                    </select>
+                    <!-- <input v-model.trim='order.state' class="form-control"> -->
+                  </div>
+                </div>
+
+                <!-- 우편번호 -->
+                <div class="form-group">
+                  <div class="col-md-6 col-md-offset-4">
+                    <strong>우편번호 : </strong>
+                    <input v-model.trim='order.zip' type="number" class="form-control">
+                  </div>
+                </div>
+
+                <!-- 선물 보내기 -->
+                <div class="form-group">
+                  <div class="col-md-6 boxes">
+                    <input v-bind:true-value='order.sendGift' v-bind:false-value='order.dontSendGift' v-model='order.gift' type="checkbox" id="gift">
+                    <label for="checkbox">선물로 보내기?</label>
+                  </div>
+                </div>
+
+                <!-- 자택 직장 -->
+                <div class="form-group">
+                  <div class="col-md-6 boxes">
+                    <input type="radio" id="home" v-model='order.method' v-bind:value='order.home'>
+                    <label for="home">자택</label>
+                    <input type="radio" id="business" v-model='order.method' v-bind:value='order.business'>
+                    <label for="business">직장</label>
+                  </div>
+                </div>
+
+                <!-- 주문하기 버튼 -->
+                <div class="form-group">
+                  <div class="col-md-6">
+                    <button v-on:click='submitForm' type="submit" class="btn btn-primary submit">주문하기</button>
+                  </div>
+                </div>
+
+                <!-- 결과창 -->
+                <div class="col-md-12 verify">
+                  <pre>
+                    이름 : {{ order.firstName }}
+                    성 : {{ order.lastName }}
+
+                    주소 : {{ order.address }}
+                    도시 : {{ order.city }}
+                    우편번호 : {{ order.zip }}
+                    주 : {{ order.state }}
+
+                    배송지: {{ order.method }}
+                    선물: {{ order.gift }}
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      var APP_LOG_LIFECYCLE_EVENTS = true;
+      var webstore = new Vue({
+        el: '#app',
+        data: {
+          sitename: 'Vue.js 애완용품샵!!',
+          showProdect: true,
+          states:{
+            SC: '서울특별시',
+            BC: '부산광역시',
+            GC: '광주광역시',
+            DC: '대구광역시',
+            IC: '인천광역시'
+          },
+          order: {
+            firstName: '',
+            lastName: '',
+            address: '',
+            city: '',
+            zip: '',
+            state: '',
+            method: '자택 주소',
+            business: '직장 주소',
+            home: '자택 주소',
+            gift: '선물로 보내기',
+            sendGift: '선물로 보내기',
+            dontSendGift: '선물로 보내지 않기'
+          },
+          product: {
+            id: 1001,
+            title: '고양이 사료, 25파운드',
+            description: '당신의 고양이를 위한 <em>거부할 수 없는</em>, 유기농 25파운드 사료입니다.',
+            price: 200000,
+            image: 'assets/images/product-fullsize.png',
+            availableInventory: 5
+          },
+          cart: []
+        },
+        methods: {
+          // 장바구니 추가
+          addToCart: function(){
+            this.cart.push( this.product.id );
+          },
+          // 체크아웃
+          showCheckout() {
+            this.showProdect = this.showProdect ? false : true;
+          },
+            // 주문하기
+            submitForm(){
+              alert('제출 완료');
+            }
+        },
+        computed: {
+          cartItemCount() {
+            return this.cart.length || '';
+          },
+          canAddToCart() {
+            return this.product.availableInventory > this.cartItemCount;
+          }
+        },
+        filters: {
+          formatPrice(price){
+            if(!parseInt(price)){return '';}
+            // 100,000 > 99999
+            if(price > 99999){
+                                // 1,000.00
+              var priceString = (price / 100).toFixed(2);
+              //console.log(priceString);  //2000.00
+              var priceArray = priceString.split('').reverse();
+            //  console.log(priceArray);  //[0, 0, ., 0, 0, 0, , 2]
+                    // 콤마 자릿수
+              var index = 3;
+                          // 8(',' 포함 )
+              while (priceArray.length > index + 3){
+                                  //6 , 삭제x, ',' 삽입
+                priceArray.splice(index + 3, 0, ",");
+                //console.log(index);  //3
+
+                index += 4;  //반복 중단
+              }
+              return "$" + priceArray.reverse().join('');
+            }else{
+              console.log(price);
+              return "$" + (price/100).toFixed(2);
+            }
+          }
+        },
+        beforeCreate: function(){
+          if(APP_LOG_LIFECYCLE_EVENTS){
+            // console.log('beforeCreate');
+          }
+        },
+        created: function(){
+          if(APP_LOG_LIFECYCLE_EVENTS){
+            // console.log('created');
+          }
+        },
+        beforeMounte: function(){
+          if(APP_LOG_LIFECYCLE_EVENTS){
+                        // check
+            console.log('beforeMounte');
+          }
+        },
+        mounted: function(){
+          if(APP_LOG_LIFECYCLE_EVENTS){
+            // console.log('mounted');
+          }
+        },
+        beforeUpdate: function(){
+          if(APP_LOG_LIFECYCLE_EVENTS){
+                        // check
+            console.log('beforeUpdate');
+          }
+        },
+        updated: function(){
+          if(APP_LOG_LIFECYCLE_EVENTS){
+                        // check
+            console.log('updated');
+          }
+        },
+        beforeDestroy: function(){
+          if(APP_LOG_LIFECYCLE_EVENTS){
+                          // check
+            console.log('beforeDestroy');
+          }
+        },
+        destroyed: function(){
+          if(APP_LOG_LIFECYCLE_EVENTS){
+                        // check
+            console.log('destroyed');
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
